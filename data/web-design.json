@@ -1,5 +1,14 @@
 [
-  { "title": "Axcel", "url": "../projects/web-design/axcel/index.html", "description": "This portfolio template reimagined.", "image": "../projects/web-design/axcel/Cover.png" }
+  {
+    "title": "Axcel",
+    "url": "../projects/web-design/axcel/index.html",
+    "description": "This portfolio template reimagined.",
+    "image": "../projects/web-design/axcel/Cover.png"
+  },
+  {
+    "title": "Loved Pets Animal Shelter",
+    "url": "../projects/web-design/LovePetsAnimalShelter-main/index.html",
+    "description": "A responsive platform for pet adoption and volunteer coordination.",
+    "image": "../projects/web-design/LovePetsAnimalShelter-main/screen.png"
+  }
 ]
-
-
