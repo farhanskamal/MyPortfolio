@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loved Pets Animal Shelter - Homepage</title>
+    <link rel="icon" type="image/png" href="img/LPASLogoShrinked.png">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="logo-container">
+                    <img src="img/LPASLogoExpanded.png" alt="Loved Pets Animal Shelter Logo" class="logo-img">
+                </a>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <nav class="nav-links">
+                    <a href="adopt.html">Adopt</a>
+                    <a href="volunteer.html">Volunteer</a>
+                    <a href="aboutus.html">About Us</a>
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="container section">
+            <div class="hero"
+                style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("img/petbanner3.jpeg")'>
+                <div class="flex flex-col gap-4 items-center max-w-2xl">
+                    <h1>Find a Friend, Save a Life.</h1>
+                    <p style="font-size: 1.25rem;">Welcome to Loved Pets Animal Shelter. Your new best friend is
+                        waiting.</p>
+                    <div class="flex gap-4" style="flex-wrap: wrap; justify-content: center;">
+                        <a href="adopt.html" class="btn btn-primary">Adopt a Pet</a>
+                        <a href="volunteer.html" class="btn btn-secondary">Join Our Volunteers</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="section" style="background-color: var(--background-light);">
+            <div class="container text-center" style="max-width: 800px;">
+                <h2>Our Mission</h2>
+                <p style="font-size: 1.125rem; color: var(--text-dark); opacity: 0.8;">
+                    At Loved Pets Animal Shelter, we are dedicated to providing a safe, loving, and supportive
+                    environment for animals in need. Our mission is to rescue, rehabilitate, and rehome pets while
+                    fostering a community of compassion and responsible pet ownership.
+                </p>
+            </div>
+        </section>
+
+        <!-- Featured Pets Section -->
+        <section class="section" style="background-color: rgba(189, 224, 254, 0.2);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 3rem;">
+                    <h2>Featured Pets Ready for a Home</h2>
+                </div>
+                <div class="grid grid-3">
+                    <!-- Pet Card 1 -->
+                    <div class="card">
+                        <img src="img/pets/dpet1.jpg" alt="Golden Retriever Mix" class="card-img">
+                        <div class="card-content">
+                            <h3>Buddy</h3>
+                            <p>Golden Retriever Mix</p>
+                            <span class="status-badge status-available">Available</span>
+                        </div>
+                    </div>
+                    <!-- Pet Card 2 -->
+                    <div class="card">
+                        <img src="img/pets/cpet1.jpg" alt="Tabby Cat" class="card-img">
+                        <div class="card-content">
+                            <h3>Luna</h3>
+                            <p>Domestic Shorthair</p>
+                            <span class="status-badge status-pending">Adoption Pending</span>
+                        </div>
+                    </div>
+                    <!-- Pet Card 3 -->
+                    <div class="card">
+                        <img src="img/pets/rpet1.jpg" alt="Dwarf Rabbit" class="card-img">
+                        <div class="card-content">
+                            <h3>Thumper</h3>
+                            <p>Dwarf Rabbit</p>
+                            <span class="status-badge status-available">Available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories -->
+        <section class="section container">
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <h2>Happy Tails: Our Success Stories</h2>
+            </div>
+            <div class="flex items-center justify-center gap-8" style="flex-wrap: wrap;">
+                <img src="img/pets/hpet1.jpg" alt="Happy dog with owner"
+                    style="width: 320px; height: 320px; object-fit: cover; border-radius: 0.75rem; box-shadow: var(--shadow-lg);">
+                <div style="max-width: 450px; text-align: center;">
+                    <p style="font-size: 1.25rem; font-style: italic; margin-bottom: 1rem;">"Adopting Max was the best
+                        decision we've ever made. He brings so much joy and laughter into our home every single day.
+                        Thank you, Loved Pets, for bringing us together!"</p>
+                    <p style="font-weight: 700;">- The Johnson Family</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Get Involved -->
+        <section class="section" style="background-color: rgba(189, 224, 254, 0.2);">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 3rem;">
+                    <h2>Get Involved</h2>
+                    <p style="max-width: 600px; margin: 0 auto; opacity: 0.8;">There are many ways you can help us make
+                        a difference in the lives of animals.</p>
+                </div>
+                <div class="grid grid-2" style="max-width: 900px; margin: 0 auto;">
+                    <!-- Volunteer Card -->
+                    <div class="card" style="text-align: center; padding: 2rem;">
+                        <div
+                            style="color: var(--primary-color); background-color: rgb(2 19 125 / 20%); width: fit-content; margin: 0 auto 1rem; padding: 1rem; border-radius: 50%;">
+                            <span class="material-symbols-outlined" style="font-size: 2.5rem;">volunteer_activism</span>
+                        </div>
+                        <h3>Become a Volunteer</h3>
+                        <p>Join our dedicated team and help with animal care, events, and daily operations. Your time
+                            and skills can change a life.</p>
+                        <a href="volunteer.html" class="btn btn-secondary" style="margin-top: 1rem;">Learn About
+                            Volunteering</a>
+                    </div>
+                    <!-- Foster Card (Replaced Donate) -->
+                    <div class="card" style="text-align: center; padding: 2rem;">
+                        <div
+                            style="color: var(--primary-color); background-color: rgb(2 19 125 / 20%); width: fit-content; margin: 0 auto 1rem; padding: 1rem; border-radius: 50%;">
+                            <span class="material-symbols-outlined" style="font-size: 2.5rem;">home</span>
+                        </div>
+                        <h3>Become a Foster</h3>
+                        <p>Fostering a pet helps them prepare for a forever home and frees up space in the shelter for
+                            more animals in need.</p>
+                        <a href="contact.html" class="btn btn-secondary" style="margin-top: 1rem;">Contact to Foster</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <h4>Loved Pets Animal Shelter</h4>
+                <p style="color: #9ca3af; font-size: 0.875rem;">123 Puppy Lane, Petville, USA</p>
+                <p style="color: #9ca3af; font-size: 0.875rem;">contact@lovedpets.org</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul style="color: #9ca3af; font-size: 0.875rem; margin-top: 1rem;">
+                    <li><a href="adopt.html">Adopt</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <div class="flex gap-4" style="margin-top: 1rem;">
+                    <a href="#" style="color: #9ca3af;"><span class="material-symbols-outlined">public</span></a>
+                    <a href="#" style="color: #9ca3af;"><span class="material-symbols-outlined">photo_camera</span></a>
+                    <a href="#" style="color: #9ca3af;"><span
+                            class="material-symbols-outlined">alternate_email</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center"
+            style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #374151; color: #6b7280; font-size: 0.875rem;">
+            <p>© 2024 Loved Pets Animal Shelter. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
