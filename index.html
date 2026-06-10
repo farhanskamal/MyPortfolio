@@ -133,7 +133,7 @@
             Contact Me
           </a>
           <a class="btn btn-outline"
-            href="https://drive.google.com/file/d/1NEClmw9QsRnBbMEUEluGs_JenEyipmkf/view?usp=sharing" target="_blank"
+            href="https://drive.google.com/file/d/1yQFRMY473xWSpj4FyoO842akwR_4cNqJ/view" target="_blank"
             rel="noopener noreferrer" aria-label="View resume PDF">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -151,17 +151,43 @@
       </div>
     </section>
 
-    <!-- ═══ RIGHT: GALLERY ═══ -->
-    <aside class="right" aria-label="Project gallery">
-      <div class="gallery-col col-a">
-        <div class="gallery-inner" id="colA"></div>
+    <!-- ═══ RIGHT: GALLERY / PROJECTS ═══ -->
+    <aside class="right" aria-label="Work showcase">
+      <div class="panel-toggle" role="tablist" aria-label="Showcase panels">
+        <button class="panel-tab active" id="tabGallery" role="tab" aria-selected="true" aria-controls="panelGallery"
+          data-panel="gallery">Gallery</button>
+        <button class="panel-tab" id="tabProjects" role="tab" aria-selected="false" aria-controls="panelProjects"
+          data-panel="projects">Projects</button>
       </div>
-      <div class="gallery-col col-b">
-        <div class="gallery-inner" id="colB"></div>
+
+      <div class="panel-content active" id="panelGallery" role="tabpanel" aria-labelledby="tabGallery">
+        <div class="gallery-col col-a">
+          <div class="gallery-inner" id="colA"></div>
+        </div>
+        <div class="gallery-col col-b">
+          <div class="gallery-inner" id="colB"></div>
+        </div>
+      </div>
+
+      <div class="panel-content" id="panelProjects" role="tabpanel" aria-labelledby="tabProjects" hidden>
+        <div class="projects-scroll">
+          <div class="projects-list" id="projectsList"></div>
+        </div>
       </div>
     </aside>
 
   </main>
+
+  <!-- Project detail modal -->
+  <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle"
+    hidden>
+    <div class="project-modal-backdrop" id="projectModalBackdrop"></div>
+    <div class="project-modal-panel">
+      <button class="project-modal-close" id="projectModalClose" type="button"
+        aria-label="Close project details">✕</button>
+      <div class="project-modal-scroll" id="projectModalContent"></div>
+    </div>
+  </div>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
