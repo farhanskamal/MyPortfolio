@@ -292,6 +292,28 @@ main {
   line-height: 1;
 }
 
+/* Eco Saver: trim cost, keep the vibe (not a blank mode). */
+.efficiency-mode #cursorFx {
+  display: none !important;
+}
+
+.efficiency-mode [data-sticker-section] .aero-sticker:nth-child(n+3) {
+  display: none;
+}
+
+.efficiency-mode .footer-glyph:nth-child(n+9) {
+  display: none;
+}
+
+.efficiency-mode .aero-flare {
+  opacity: 0.45;
+  animation-duration: 14s;
+}
+
+.efficiency-mode .aero-pause-chip {
+  display: none;
+}
+
 .efficiency-mode .wave-stream {
   display: flex;
   align-items: center;
@@ -304,11 +326,28 @@ main {
   transform: none !important;
 }
 
-.efficiency-mode .aero-stickers,
-.efficiency-mode .aero-bubble-layer,
-.efficiency-mode .footer-ascii,
-.efficiency-mode #cursorFx {
-  display: none !important;
+/* Pause decorative motion for off-screen sections — saves CPU/GPU quietly. */
+.section-idle .aero-sticker,
+.section-idle .skills-track,
+.section-idle .footer-glyph {
+  animation-play-state: paused !important;
+}
+
+html.landing-idle .aero-bubble,
+html.landing-idle .aero-flare {
+  animation-play-state: paused !important;
+}
+
+/* Auto lite tuning on smaller / lower-memory devices (Eco Saver off). */
+.perf-lite .aero-flare {
+  opacity: 0.5;
+}
+
+.perf-lite .gallery-card,
+.perf-lite .dock-nav,
+.perf-lite .footer-frost {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 @media (max-width: 700px) {

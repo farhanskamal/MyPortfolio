@@ -565,7 +565,7 @@ let stickersBuilt = false;
 let footerAsciiBuilt = false;
 
 function shouldReduceEffects() {
-  return REDUCED_MOTION || efficiencyMode;
+  return REDUCED_MOTION;
 }
 
 function loadEfficiencyPreference() {
@@ -604,7 +604,7 @@ function makeCard(src, idx, sizeClass) {
 
   const img = document.createElement('img');
   const thumb = thumbPath(src);
-  if (shouldReduceEffects()) {
+  if (REDUCED_MOTION || efficiencyMode) {
     img.src = thumb;
   } else {
     img.dataset.src = thumb;
@@ -694,7 +694,7 @@ function recalcWaveMetrics() {
     // is safely wider than the visible area + buffer.
     // I do it with measurement (not pure guess math) so CSS size changes
     // don't quietly break the seamless loop.
-    if (row.entries?.length && !shouldReduceEffects()) {
+    if (row.entries?.length && !REDUCED_MOTION && !efficiencyMode) {
       let guard = 0;
       while (
         measured.halfWidth > 0 &&
@@ -726,7 +726,7 @@ function stopWaveLoop() {
 
 function syncWaveLoop() {
   stopWaveLoop();
-  if (shouldReduceEffects() || !waveRows.length || !waveInView || document.hidden || wavePaused) return;
+  if (REDUCED_MOTION || efficiencyMode || !waveRows.length || !waveInView || document.hidden || wavePaused) return;
   waveRafId = requestAnimationFrame(animateWaveGallery);
 }
 
@@ -807,7 +807,7 @@ function waveCopiesNeeded(entries) {
   return halfCopies * 2;
 }
 
-function trimWaveRowsForEfficiency() {
+function trimWaveRowsForEco() {
   waveRows.forEach(row => {
     if (!row.entries?.length) return;
     const center = Math.floor(row.entries.length / 2);
@@ -825,27 +825,36 @@ function trimWaveRowsForEfficiency() {
   });
 }
 
+function settleEcoGallery() {
+  waveRows.forEach(row => {
+    row.track.style.transform = 'none';
+    row.cards.forEach(card => {
+      const img = card.querySelector('img');
+      if (!img) return;
+      const needed = img.dataset.src;
+      if (needed) {
+        img.src = needed;
+        img.dataset.loaded = needed;
+      }
+      card.style.transform = 'translate3d(0,0,0)';
+    });
+  });
+}
+
+function applyEcoWaveTuning() {
+  waveRows.forEach(row => {
+    const base = row.baseSpeed ?? row.speed;
+    row.baseSpeed = base;
+    row.speed = efficiencyMode ? base * 0.55 : base;
+  });
+}
+
 function restoreWaveRowsFromEfficiency() {
   waveRows.forEach(row => {
     if (!row.entries?.length) return;
     row.track.innerHTML = '';
     appendEntryCopies(row, waveCopiesNeeded(row.entries));
     row.scrollX = 0;
-  });
-}
-
-function loadWaveImagesNow() {
-  waveRows.forEach(row => {
-    row.cards.forEach(card => {
-      const img = card.querySelector('img');
-      if (!img) return;
-      const needed = img.dataset.src || img.src;
-      if (!needed) return;
-      img.src = needed;
-      img.dataset.loaded = needed;
-      card.style.transform = 'translate3d(0,0,0)';
-    });
-    row.track.style.transform = 'none';
   });
 }
 
@@ -878,6 +887,7 @@ function buildWaveGallery() {
       scrollX: 0,
       halfWidth: 0,
       speed: config.speed,
+      baseSpeed: config.speed,
       phaseOffset: config.phaseOffset,
       arcScale: config.arcScale,
     };
@@ -923,8 +933,18 @@ function buildWaveGallery() {
 
 function paintWaveGallery(advance) {
   if (!waveGallery || !waveRows.length) return;
-  if (advance) wavePhase += 0.018;
+  if (efficiencyMode) {
+    if (!advance) settleEcoGallery();
+    return;
+  }
+  const eco = efficiencyMode;
+  if (advance) wavePhase += eco ? 0.012 : 0.018;
   const invGalleryW = 1 / galleryW;
+  const paintMin = -WAVE_IMAGE_BUFFER;
+  const paintMax = galleryW + WAVE_IMAGE_BUFFER;
+  const waveAmp = eco ? 6 : 10;
+  const depthMul = eco ? 0.4 : 1;
+  const rotMul = eco ? 0.55 : 1;
 
   for (let r = 0; r < waveRows.length; r++) {
     const row = waveRows[r];
@@ -940,6 +960,8 @@ function paintWaveGallery(advance) {
       const centerX = centers[i] - row.scrollX;
       syncCardImage(cards[i], centerX, galleryW);
 
+      if (centerX < paintMin - 220 || centerX > paintMax + 220) continue;
+
       // Arc note to future me:
       // t is 0..1 from left -> right.
       // This quadratic keeps the right side a little higher,
@@ -947,9 +969,9 @@ function paintWaveGallery(advance) {
       const t = centerX * invGalleryW;
       const arcY = (24 * t * t - 108 * t + 40) * arcScale * 0.9;
       const phase = centerX * 0.014 + wavePhase + phaseOffset + i * 0.12;
-      const waveY = Math.sin(phase) * 10;
-      const depth = Math.cos(phase) * 16;
-      const rotY = Math.sin(centerX * 0.01 + wavePhase + phaseOffset) * 4;
+      const waveY = Math.sin(phase) * waveAmp;
+      const depth = Math.cos(phase) * 16 * depthMul;
+      const rotY = Math.sin(centerX * 0.01 + wavePhase + phaseOffset) * 4 * rotMul;
       const scale = 1 + Math.max(0, depth / 180);
 
       cards[i].style.transform =
@@ -1058,7 +1080,7 @@ function cellToPosition(cellIdx, slotInCell) {
 }
 
 function buildSillyStickers() {
-  if (shouldReduceEffects() || stickersBuilt) return;
+  if (REDUCED_MOTION || stickersBuilt) return;
   const layout = [
     { section: 'landing', count: 4 },
     { section: 'about', count: 5 },
@@ -1113,12 +1135,14 @@ function buildSillyStickers() {
 // bubbles float, you pop them, and new ones respawn after a short delay.
 
 const BUBBLE_MAX_COUNT = 6;
+const BUBBLE_MAX_ECO = 3;
+const BUBBLE_MAX_LITE = 5;
 const BUBBLE_SPAWN_MS = 14000;
 const BUBBLE_RESPAWN_MIN_MS = 3000;
 const BUBBLE_RESPAWN_MAX_MS = 5000;
 
 function initAeroBubbleSpawner() {
-  if (shouldReduceEffects() || stopBubbleSpawner) return;
+  if (REDUCED_MOTION || stopBubbleSpawner) return;
 
   const layer = document.getElementById('aeroBubbleLayer');
   if (!layer) return;
@@ -1169,9 +1193,15 @@ function initAeroBubbleSpawner() {
 
   bubbles.forEach(b => applyBubbleMotion(b));
 
+  function bubbleLimit() {
+    if (document.documentElement.classList.contains('efficiency-mode')) return BUBBLE_MAX_ECO;
+    if (document.documentElement.classList.contains('perf-lite')) return BUBBLE_MAX_LITE;
+    return BUBBLE_MAX_COUNT;
+  }
+
   function spawnBubble() {
     if (document.hidden) return;
-    if (bubbles.length >= BUBBLE_MAX_COUNT) return;
+    if (bubbles.length >= bubbleLimit()) return;
 
     const bubble = createBubble(true);
     if (!bubble) return;
@@ -1265,10 +1295,13 @@ function initCursorEffects() {
 
   let lastTrail = 0;
   const TRAIL_MS = 33;
-  const MAX_TRAIL = 12;
+
+  function maxTrailCount() {
+    return document.documentElement.classList.contains('perf-lite') ? 6 : 10;
+  }
 
   function trimTrail() {
-    while (layer.querySelectorAll('.cursor-particle').length > MAX_TRAIL) {
+    while (layer.querySelectorAll('.cursor-particle').length > maxTrailCount()) {
       layer.querySelector('.cursor-particle')?.remove();
     }
   }
@@ -1522,9 +1555,9 @@ function initFooterClock() {
 
 function initFooterAscii() {
   const host = document.getElementById('footerAscii');
-  if (!host || shouldReduceEffects() || footerAsciiBuilt) return;
+  if (!host || REDUCED_MOTION || footerAsciiBuilt) return;
 
-  const count = REDUCED_MOTION ? 8 : 14;
+  const count = document.documentElement.classList.contains('perf-lite') ? 10 : 12;
   const glyphs = shuffleArray(FOOTER_GLYPHS).slice(0, count);
 
   glyphs.forEach((glyph, i) => {
@@ -1546,14 +1579,45 @@ function initFooterAscii() {
   footerAsciiBuilt = true;
 }
 
+function isPerfLiteDevice() {
+  return window.matchMedia('(max-width: 900px)').matches
+    || (navigator.deviceMemory && navigator.deviceMemory <= 4)
+    || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
+}
+
+function applyPerfLiteClass() {
+  const perfLite = !efficiencyMode && isPerfLiteDevice();
+  document.documentElement.classList.toggle('perf-lite', perfLite);
+}
+
+function initSectionIdleObservers() {
+  if (!('IntersectionObserver' in window)) return;
+
+  const landing = document.getElementById('landing');
+  if (landing) {
+    new IntersectionObserver(([entry]) => {
+      document.documentElement.classList.toggle('landing-idle', !entry.isIntersecting);
+    }, { threshold: 0.08 }).observe(landing);
+  }
+
+  document.querySelectorAll('.about, .projects-section, .site-footer').forEach(section => {
+    new IntersectionObserver(([entry]) => {
+      section.classList.toggle('section-idle', !entry.isIntersecting);
+    }, { threshold: 0.06, rootMargin: '100px 0px' }).observe(section);
+  });
+}
+
 function updateEfficiencyToggleUi() {
   if (!efficiencyToggle) return;
   efficiencyToggle.setAttribute('aria-pressed', efficiencyMode ? 'true' : 'false');
-  efficiencyToggle.title = efficiencyMode ? 'Efficiency mode on' : 'Efficiency mode off';
+  efficiencyToggle.title = efficiencyMode
+    ? 'Eco Saver on — lighter motion, keeps the vibe'
+    : 'Eco Saver off — full motion';
 }
 
 function applyEfficiencyMode() {
   document.documentElement.classList.toggle('efficiency-mode', efficiencyMode);
+  applyPerfLiteClass();
   updateEfficiencyToggleUi();
 
   if (wavePauseChip) {
@@ -1561,40 +1625,28 @@ function applyEfficiencyMode() {
   }
 
   if (efficiencyMode) {
-    setWavePaused(true);
-    trimWaveRowsForEfficiency();
+    stopWaveLoop();
+    setWavePaused(false);
+    trimWaveRowsForEco();
+    recalcWaveMetrics();
+    settleEcoGallery();
+
+    if (stopCursorEffects) stopCursorEffects();
+
+    const layer = document.getElementById('aeroBubbleLayer');
+    if (layer) {
+      const all = [...layer.querySelectorAll('.aero-bubble')];
+      all.slice(BUBBLE_MAX_ECO).forEach(b => b.remove());
+    }
+  } else {
+    applyEcoWaveTuning();
+    restoreWaveRowsFromEfficiency();
     recalcWaveMetrics();
     paintWaveGallery(false);
-    loadWaveImagesNow();
+    syncWaveLoop();
 
-    if (stopBubbleSpawner) {
-      stopBubbleSpawner();
-    }
-    document.querySelectorAll('.aero-bubble--dynamic').forEach(el => el.remove());
-
-    if (stopCursorEffects) {
-      stopCursorEffects();
-    }
-
-    document.querySelectorAll('.aero-stickers').forEach(host => { host.innerHTML = ''; });
-    stickersBuilt = false;
-
-    const footerAscii = document.getElementById('footerAscii');
-    if (footerAscii) footerAscii.innerHTML = '';
-    footerAsciiBuilt = false;
-    return;
+    if (!stopCursorEffects) initCursorEffects();
   }
-
-  setWavePaused(false);
-  restoreWaveRowsFromEfficiency();
-  recalcWaveMetrics();
-  paintWaveGallery(false);
-  syncWaveLoop();
-
-  if (!stickersBuilt) buildSillyStickers();
-  if (!stopBubbleSpawner) initAeroBubbleSpawner();
-  if (!stopCursorEffects) initCursorEffects();
-  if (!footerAsciiBuilt) initFooterAscii();
 }
 
 if (efficiencyToggle) {
@@ -1606,13 +1658,16 @@ if (efficiencyToggle) {
 }
 
 efficiencyMode = loadEfficiencyPreference();
+applyPerfLiteClass();
 buildSillyStickers();
 buildProjectExplorer();
 initAeroBubbleSpawner();
 initCursorEffects();
 initFooterClock();
 initFooterAscii();
+initSectionIdleObservers();
 applyEfficiencyMode();
+window.addEventListener('resize', applyPerfLiteClass, { passive: true });
 
 /* ── Projects (legacy card grid) ──────────────────────────── */
 
