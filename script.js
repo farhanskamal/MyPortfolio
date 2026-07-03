@@ -75,120 +75,432 @@ const SKILLS = [
 ═══════════════════════════════════════════════════════════ */
 const PROJECTS = [
   {
-    slug: 'letin',
-    title: 'Letin',
-    label: 'An opportunities bulletin board for NYC folks to find opportunities and break information barriers or even the digital divide.',
-    summary:
-      'Letin is a student-facing opportunity board that helps teens find internships, events, deadlines, and other resources all in one place; Based on the premise that access to information should not be limited by one\'s connections or geography.',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Leaflet'],
-    demo: 'https://farhanskamal.github.io/Letin/',
-    repo: 'https://github.com/farhanskamal/Letin',
-    previewImage: 'gallery/letin/LandingPage.png',
+    slug: 'axcel',
+    title: 'Axcel',
+    folderName: 'Axcel',
+    category: 'web-design',
+    summary: 'A modern chat app concept similar to Discord — landing page, sign-up flow, and glossy UI exploration.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'UI Design'],
+    demo: 'https://farhan-kamal.github.io/AxcelLandingPage/',
+    repo: 'https://github.com/Farhan-Kamal/AxcelLandingPage',
+    previewImage: 'gallery/projects/axcel-cover.png',
     detail: {
-      heroImage: {
-        src: 'gallery/letin/LandingPage.png',
-        alt: 'Letin landing page with board header, mission callout, and search bar',
-        caption: 'Landing page — board, mission callout, and search',
-      },
-      tagline: 'Opportunities bulletin board for NYC folks to break information barriers',
-      lede:
-        'Letin is a student-facing opportunity board that helps teens and adults to find internships, events, deadlines, and other resources all in one place; Based on the premise that access to information should not be limited by one\'s connections or geography.',
+      tagline: 'Discord-inspired chat app landing and auth UI',
+      lede: 'Axcel is a web design project exploring a modern communication platform with a polished landing page, login, and sign-up screens built for clarity and visual impact.',
       meta: [
-        { label: 'Tools', value: 'Figma, Claude, Cursor' },
-        { label: 'Stack', value: 'React, TypeScript, Vite, Tailwind CSS' },
-        { label: 'Scope', value: 'Functional prototype with 18 real NYC listings' },
+        { label: 'Category', value: 'Web Design' },
+        { label: 'Stack', value: 'HTML, CSS, JavaScript' },
+        { label: 'Scope', value: 'Marketing site + auth UI mockups' },
       ],
+      heroImage: {
+        src: 'gallery/projects/axcel-cover.png',
+        alt: 'Axcel chat app landing page cover',
+        caption: 'Axcel landing page hero',
+      },
       sections: [
         {
-          heading: 'Problem',
+          heading: 'Overview',
           paragraphs: [
-            'Information about opportunities for NYC students and adults is spread out in school emails, social media posts, library websites, and government pages. People with less established networks or counselors with limited time to communicate may miss out on great opportunities because they don\'t even know about them.',
-            'Similar to a theme that we are exploring in the book Fences by August Wilson, We are trying to break barriers, that led to people like Troy Maxson who was prevented from pursuing opportunities such as professional baseball, not due to any lack of skill, but because of structural barriers. The same principle applies here to information barriers for youth and older generations.',
-          ],
-        },
-        {
-          heading: 'Research',
-          paragraphs: [
-            'In researching current channels for obtaining opportunities for young and old people, I looked at Morning Bell newsletters (NYCPS), library programming for teens, SYEP opportunities, and networking through extracurricular activities and friends. The common thread was the fact that the information was out there but inconsistent, difficult to find post-deadline, and scattered.',
-            'In addition, I considered the cognitive benefits of a bulletin interface style, compared to long e-mail chains or social media feeds. Students need information that they can quickly scan for relevance, with deadlines and a means to favorite posts without having to make an account first.',
-          ],
-        },
-        {
-          heading: 'Solution',
-          paragraphs: [
-            'Letin consolidates the hunt for opportunities into one place using a searchable bulletin board. Users can filter opportunities by category, save posts to their favorites, see where the listed programs take place via the map, and create new posts. The admin panel provides CRUD operations and ability to pin important posts and use a text editor to style different words.',
-            'There are 18 real NYC programs included in the app: All Star Code, Brooklyn Public Library Teen Techies, NYC SYEP, The Met internship, Khan Academy, Common App, and many others with links included to each resource with honest notes about deadlines.',
+            'Axcel reimagines a community chat platform with a clean landing experience and onboarding screens. The focus was on hierarchy, contrast, and a product feel that could scale into a full application.',
           ],
         },
         {
           heading: 'Features',
           list: [
-            'Board with search, category tags, pinned posts, and favorites',
-            'Post detail with upcoming deadline countdown badge',
-            'Map displaying locations of NYC programs',
-            'Community posting flow to add user-generated content',
-            'Admin dashboard with CRUD, pin/unpin posts, TipTap rich text editing',
-            'Mission & Impact pages that support capstone narrative',
-            'Accessibility: skip navigation link & reduced motion',
-          ],
-        },
-        {
-          heading: 'Design',
-          paragraphs: [
-            'I created the visual identity in Figma: purple #C698FF, yellow #FFDE4C, and blue #36B5FF, with fonts Iosevka & Istok Web, balancing warmth and clarity to ensure that listings are inviting without being institutional.',
-            'Prioritizing information architecture meant designing a hierarchy of components — category tags, countdown deadlines, pinned posts to help students scan for relevant information easily. Location map is included for in-person programs.',
+            'Responsive landing page with feature highlights',
+            'Login and sign-up page designs',
+            'Consistent component styling across screens',
+            'Deployed live on GitHub Pages',
           ],
           image: {
-            src: 'gallery/letin/StyleGuideFigma.png',
-            alt: 'Letin Figma style guide with logo, tagline, fonts, and color palette',
-            caption: 'Figma style guide — logo, typography, and color palette',
+            src: 'gallery/projects/axcel-hpi.png',
+            alt: 'Axcel app mockup design',
+            caption: 'Mock up design of the app',
           },
         },
         {
-          heading: 'Technical considerations',
+          heading: 'Auth screens',
+          paragraphs: ['Login and sign-up flows with matching visual language.'],
+          image: {
+            src: 'gallery/projects/axcel-login.jpg',
+            alt: 'Axcel login screen',
+            caption: 'Login screen',
+          },
+        },
+        {
+          heading: 'Mobile',
+          image: {
+            src: 'gallery/projects/axcel-hpi-mobile.png',
+            alt: 'Axcel mobile mockup',
+            caption: 'Mobile version of the mock up',
+          },
+        },
+        {
+          heading: 'Outcome',
           paragraphs: [
-            'I used the Vite development environment, with React as the main framework and Typescript for type safety. Using React Router and Tailwind CSS, I built an app that does not use a server (intentionally no Next.js).',
-            'Post, bookmark, and verified user state is managed using React Context, whereas CRUD operations are performed over seeded data in session storage. This made the app self-contained enough to launch it on GitHub Pages with real-time functionality but without a server.',
-            'Reusability was another technical goal, and the components I used include: PostCard, MapView, FeaturedSection, AppShell, and BarrierCallout.',
-            'Deploying the app to GitHub Pages requires configuring the base path, which took some additional effort because of router settings.',
+            'The project demonstrates end-to-end web design skills — from layout and typography to deployable front-end pages that communicate a product vision.',
+          ],
+          image: {
+            src: 'gallery/projects/axcel-signup.jpg',
+            alt: 'Axcel sign up screen',
+            caption: 'Sign up screen',
+          },
+        },
+      ],
+    },
+  },
+  {
+    slug: 'lovepets',
+    title: 'LovePets Animal Shelter',
+    folderName: 'LovePets Animal Shelter',
+    category: 'web-design',
+    summary: 'A multi-page animal shelter website with adopt, volunteer, and contact flows for a fictional rescue organization.',
+    tags: ['HTML', 'CSS', 'Responsive Design'],
+    previewImage: 'gallery/projects/lovepets-screen.png',
+    detail: {
+      tagline: 'Animal shelter site with adopt and volunteer pages',
+      lede: 'LovePets Animal Shelter is a static web design project built as a complete small-business site — home, about, adopt, volunteer, and contact pages with cohesive branding.',
+      meta: [
+        { label: 'Category', value: 'Web Design' },
+        { label: 'Stack', value: 'HTML, CSS' },
+        { label: 'Scope', value: 'Multi-page static site' },
+      ],
+      heroImage: {
+        src: 'gallery/projects/lovepets-screen.png',
+        alt: 'LovePets Animal Shelter website screenshot',
+        caption: 'Homepage overview',
+      },
+      sections: [
+        {
+          heading: 'Overview',
+          paragraphs: [
+            'Designed and built a full shelter website experience with navigation across adoption listings, volunteer information, and contact details. Emphasis on warmth, readability, and clear calls to action.',
           ],
         },
         {
-          heading: 'Challenges',
+          heading: 'Gallery',
+          paragraphs: ['Homepage, adoption listings, and hero imagery from the live site design.'],
+          image: {
+            src: 'gallery/projects/lovepets-screen.png',
+            alt: 'LovePets homepage overview',
+            caption: 'Homepage overview',
+          },
+        },
+        {
+          heading: 'Adoption listings',
+          image: {
+            src: 'gallery/projects/lovepets-dpet.jpg',
+            alt: 'Buddy the dog available for adoption',
+            caption: 'Buddy — available for adoption',
+          },
+        },
+        {
+          heading: 'More friends',
+          image: {
+            src: 'gallery/projects/lovepets-cpet.jpg',
+            alt: 'Luna the cat adoption pending',
+            caption: 'Luna — adoption pending',
+          },
+        },
+        {
+          heading: 'Thumper',
+          image: {
+            src: 'gallery/projects/lovepets-rpet.jpg',
+            alt: 'Thumper the rabbit available for adoption',
+            caption: 'Thumper — available',
+          },
+        },
+        {
+          heading: 'Success stories',
+          image: {
+            src: 'gallery/projects/lovepets-hpet.jpg',
+            alt: 'Max the adopted pet success story',
+            caption: 'Success story — Max',
+          },
+        },
+        {
+          heading: 'Outcome',
           paragraphs: [
-            'Deciding how much persistence to implement with a lack of a backend proved to be a tricky choice. I needed true CRDU behavior for the admin panel and favorites; however, a full API was beyond the scope of the project. Storing state in session storage based on seeded data was the solution.',
-            'In addition, base-path routing for GitHub Pages required configuring base URL in Vite and basename in React Router.',
+            'A portfolio-ready web design piece showing multi-page planning, visual consistency, and practical UX for a community-facing organization.',
+          ],
+          image: {
+            src: 'gallery/projects/lovepets-hero.jpeg',
+            alt: 'LovePets hero banner',
+            caption: 'Hero banner',
+          },
+        },
+      ],
+    },
+  },
+  {
+    slug: 'verdant-clicker',
+    title: 'Verdant Clicker',
+    folderName: 'Verdant Clicker',
+    category: 'game-design',
+    summary: 'An eco-friendly clicker game prototype that teaches green living through playful upgrades and environmental themes.',
+    tags: ['Code.org', 'Game Design', 'JavaScript', 'Prototype'],
+    demo: 'https://studio.code.org/projects/applab/R3Z0IM_GcQIxjjV-6_dORXYe12v02gVgb7XDpgbtJwM/view',
+    previewImage: 'gallery/projects/verdant-clicker-cover.png',
+    detail: {
+      tagline: 'Eco-themed clicker prototype on Code.org App Lab',
+      lede: 'Verdant Clicker is a game design prototype where players grow a greener world through clicks, upgrades, and environmental messaging — built in Code.org App Lab for rapid iteration.',
+      meta: [
+        { label: 'Category', value: 'Game Design' },
+        { label: 'Tools', value: 'Code.org App Lab' },
+        { label: 'Scope', value: 'Playable prototype' },
+      ],
+      heroImage: {
+        src: 'gallery/projects/verdant-clicker-cover.png',
+        alt: 'Verdant Clicker game cover art',
+        caption: 'Verdant Clicker cover',
+      },
+      sections: [
+        {
+          heading: 'Overview',
+          paragraphs: [
+            'A clicker game centered on sustainability themes — players invest actions into upgrades that reflect eco-friendly choices. Built as a prototype to test mechanics before a fuller Unity version.',
+          ],
+        },
+        {
+          heading: 'Features',
+          list: [
+            'Core clicker loop with upgrade progression',
+            'Environmental education woven into gameplay',
+            'Original art direction with green palette',
+            'Playable in browser via Code.org',
+          ],
+          image: {
+            src: 'gallery/projects/verdant-menu.png',
+            alt: 'Verdant Clicker main menu',
+            caption: 'Main menu',
+          },
+        },
+        {
+          heading: 'Gameplay',
+          paragraphs: ['Tutorial and core gameplay screens from the Code.org prototype.'],
+          image: {
+            src: 'gallery/projects/verdant-tutorial.jpg',
+            alt: 'Verdant Clicker tutorial',
+            caption: 'The tutorial',
+          },
+        },
+        {
+          heading: 'Outcome',
+          paragraphs: [
+            'Demonstrates game design thinking, rapid prototyping, and thematic cohesion. Planned future expansion into a fuller demo built in Unity.',
+          ],
+          image: {
+            src: 'gallery/projects/verdant-gameplay.jpg',
+            alt: 'Verdant Clicker gameplay',
+            caption: 'Gameplay',
+          },
+        },
+      ],
+    },
+  },
+  {
+    slug: 'glitchbound',
+    title: 'GlitchBound',
+    folderName: 'GlitchBound',
+    category: 'game-design',
+    summary: 'A 2D puzzle-platformer concept where glitches become tools to solve levels and navigate broken worlds.',
+    tags: ['Game Design', 'Unity', 'Puzzle', '2D Platformer'],
+    demo: 'https://www.youtube.com/watch?v=pjzvuNRtSK0',
+    previewImage: 'gallery/projects/glitchbound-cover.png',
+    detail: {
+      tagline: 'Puzzle-platformer where bugs are features',
+      lede: 'GlitchBound explores a world where visual glitches and broken physics become intentional mechanics — players manipulate anomalies to reach new areas and solve puzzles.',
+      meta: [
+        { label: 'Category', value: 'Game Design' },
+        { label: 'Engine', value: 'Unity (in development)' },
+        { label: 'Scope', value: 'Concept + video showcase' },
+      ],
+      heroImage: {
+        src: 'gallery/projects/glitchbound-cover.png',
+        alt: 'GlitchBound game cover',
+        caption: 'GlitchBound key art',
+      },
+      sections: [
+        {
+          heading: 'Overview',
+          paragraphs: [
+            'GlitchBound combines platforming with glitch-based puzzles. The design turns traditionally undesirable effects — screen tears, duplicate sprites, physics quirks — into player tools.',
+          ],
+        },
+        {
+          heading: 'Features',
+          list: [
+            'Glitch-as-mechanic puzzle design',
+            '2D platformer level structure',
+            'Distinct visual identity around digital corruption',
+            'Gameplay showcased on YouTube',
           ],
         },
         {
           heading: 'Outcome',
           paragraphs: [
-            'Letin is a functional prototype that delivers the full experience, from connecting to real listings, tracking engagement (localStorage counters) and impact. It proves that I can take a social problem defined by research, design, develop, and deploy a solution. I have also reached out to a Non-profit organization about it and got their feedback on the app.',
-            'In a production app, there would be an actual API/database, listings would be automatically updated and there would be partnerships with schools and organizations. However, a prototype clearly illustrates the user experience and information architecture.',
+            'A competition-ready game design piece demonstrating creative mechanics, level thinking, and presentation through video documentation.',
           ],
+        },
+      ],
+    },
+  },
+  {
+    slug: 'subarctic-island',
+    title: 'Subarctic Island',
+    folderName: 'Subarctic Island',
+    category: 'graphic-design',
+    summary: 'Branding and visual design for a Club Penguin private server — logos, banners, and community identity.',
+    tags: ['Graphic Design', 'Branding', 'Logo Design', 'Community'],
+    previewImage: 'gallery/projects/subarctic-island-cover.png',
+    detail: {
+      tagline: 'Club Penguin private server brand identity',
+      lede: 'Subarctic Island is a graphic design project covering logo, banners, and promotional assets for a fan community server with a cold, arctic theme.',
+      meta: [
+        { label: 'Category', value: 'Graphic Design' },
+        { label: 'Tools', value: 'Photoshop, Pixlr' },
+        { label: 'Scope', value: 'Brand kit + promotional art' },
+      ],
+      heroImage: {
+        src: 'gallery/projects/subarctic-island-cover.png',
+        alt: 'Subarctic Island brand cover',
+        caption: 'Subarctic Island cover art',
+      },
+      sections: [
+        {
+          heading: 'Overview',
+          paragraphs: [
+            'Created a cohesive visual identity for an online community — logo variations, social banners, and in-world promotional graphics that reinforce the arctic island theme.',
+          ],
+        },
+        {
+          heading: 'Gallery',
+          paragraphs: ['Promotional artwork and brand pieces from the Subarctic Island community kit.'],
           image: {
-            src: 'gallery/letin/ReachedOutToPerson.png',
-            alt: 'Email exchange with Urban Arts Game Academy responding positively to Letin',
-            caption: 'Outreach to Urban Arts - Game Academy',
+            src: 'gallery/image-12.png',
+            alt: 'Subarctic Island community banner',
+            caption: 'Community banner artwork',
           },
         },
         {
-          heading: 'Next steps',
-          list: [
-            'Create a back-end RESTful API for verified submissions and automatic deadline verification',
-            'Partnerships with libraries/schools for curated and trusted listings',
-            'Digest via email/push notifications for categories/favorite deadlines',
-            'Add a algorithm that can personalize the board for each user so they can find the right opportunities for themselves.'
+          heading: 'Brand artwork',
+          image: {
+            src: 'gallery/image-05.png',
+            alt: 'Subarctic Island promotional art',
+            caption: 'Promotional artwork',
+          },
+        },
+        {
+          heading: 'More designs',
+          image: {
+            src: 'gallery/projects/subarctic-art-2.png',
+            alt: 'Subarctic Island graphic design',
+            caption: 'Brand graphics',
+          },
+        },
+        {
+          heading: 'Outcome',
+          paragraphs: [
+            'Shows brand thinking for community products: recognizable marks, repeatable templates, and artwork that works across multiple touchpoints.',
           ],
+          image: {
+            src: 'gallery/projects/subarctic-art-3.png',
+            alt: 'Subarctic Island additional art',
+            caption: 'Additional promotional art',
+          },
+        },
+      ],
+    },
+  },
+  {
+    slug: 'empow',
+    title: 'EmPow',
+    folderName: 'EmPow',
+    category: 'ux-ui',
+    summary: 'An app concept that helps empower youth by surfacing opportunities — Emoti-Con Overall Excellence winner.',
+    tags: ['UX/UI', 'Figma', 'Mobile Design', 'Research'],
+    demo: 'https://emoticon.mouse.org/2025/empow',
+    previewImage: 'gallery/projects/empow-cover.png',
+    detail: {
+      tagline: 'Youth opportunity finder — Emoti-Con winning app design',
+      lede: 'EmPow is a UX/UI capstone that helps young people discover programs, internships, and resources. Research-driven flows, wireframes, and high-fidelity screens earned Overall Excellence at Emoti-Con.',
+      meta: [
+        { label: 'Category', value: 'UX/UI Design' },
+        { label: 'Tools', value: 'Figma' },
+        { label: 'Recognition', value: 'Emoti-Con 2025 — Overall Excellence' },
+      ],
+      heroImage: {
+        src: 'gallery/projects/empow-cover.png',
+        alt: 'EmPow app design cover',
+        caption: 'EmPow app screens',
+      },
+      sections: [
+        {
+          heading: 'Overview',
+          paragraphs: [
+            'EmPow addresses information barriers for NYC youth by consolidating opportunities into a scannable, mobile-first experience. User research informed navigation, filtering, and trust signals.',
+          ],
+        },
+        {
+          heading: 'Features',
+          list: [
+            'User research and problem framing',
+            'Wireframes and interactive Figma prototype',
+            'Opportunity discovery and category filtering',
+            'Presented at Emoti-Con 2025',
+          ],
+          image: {
+            src: 'gallery/projects/empow-wireframe.png',
+            alt: 'EmPow wireframe screens',
+            caption: 'Wireframe for our app',
+          },
+        },
+        {
+          heading: 'Outcome',
+          paragraphs: [
+            'EmPow demonstrates a full UX process from research through polished UI — earning Overall Excellence at Emoti-Con for helping youth discover opportunities.',
+          ],
+          image: {
+            src: 'gallery/projects/empow-cover.png',
+            alt: 'EmPow high-fidelity screens',
+            caption: 'Final app screens',
+          },
         },
       ],
     },
   },
 ];
 
+const PROJECT_CATEGORIES = [
+  { id: 'web-design', name: 'Web Design' },
+  { id: 'game-design', name: 'Game Design' },
+  { id: 'graphic-design', name: 'Graphic Design' },
+  { id: 'ux-ui', name: 'UX/UI' },
+];
+
+const SILLY_IMAGE_FILES = [
+  'sillyImages/aero-site-logo.webp',
+  'sillyImages/green-rotary-phone.webp',
+  'sillyImages/aero-globe-water.webp',
+  'sillyImages/blue-tang-fish.webp',
+  'sillyImages/aero-charm-collage.webp',
+  'sillyImages/aero-aquarium-stickers.webp',
+  'sillyImages/goldfish-pair.webp',
+  'sillyImages/cat-zoom-1.webp',
+  'sillyImages/cat-zoom-2.webp',
+  'sillyImages/cat-zoom-3.webp',
+  'sillyImages/cat-zoom-4.webp',
+  'sillyImages/aero-media-player.webp',
+  'sillyImages/aero-collage.webp',
+];
+
 /* ─────────────────────────────────────────────────────────
    No need to edit anything below this line
 ───────────────────────────────────────────────────────── */
+
+function thumbPath(src) {
+  return src.replace('gallery/', 'gallery/thumbs/');
+}
 
 /* ── Random favicon ─────────────────────────────────────── */
 (function () {
@@ -199,12 +511,12 @@ const PROJECTS = [
     link.rel = 'icon';
     document.head.appendChild(link);
   }
-  link.href = pick;
+  link.href = thumbPath(pick);
 })();
 
-/* ── Skills ticker ─────────────────────────────────────── */
-const track = document.getElementById('skillsTrack');
-if (track) {
+/* ── Skills ticker (About section background) ───────────── */
+function populateSkillsTrack(track) {
+  if (!track) return;
   [...SKILLS, ...SKILLS].forEach(s => {
     const chip = document.createElement('span');
     chip.className = 'skill-chip';
@@ -213,65 +525,1101 @@ if (track) {
   });
 }
 
-/* ── Gallery ────────────────────────────────────────────── */
-const colA = document.getElementById('colA');
-const colB = document.getElementById('colB');
+populateSkillsTrack(document.getElementById('skillsTrackA'));
+populateSkillsTrack(document.getElementById('skillsTrackB'));
+
+/* ── Wave gallery ───────────────────────────────────────── */
+// Real talk: this part is the "alive" feeling of the page.
+// The goal is simple but picky:
+// cards should stream in from the right with no random pop-in,
+// while still feeling like they live in 3D space.
+const waveGallery = document.getElementById('waveGallery');
+const wavePauseChip = document.getElementById('wavePauseChip');
 let lbIndex = 0;
 
-function buildGallery() {
-  if (!IMAGES.length) return;
-  const half = Math.ceil(IMAGES.length / 2);
-  populate(colA, IMAGES.slice(0, half), 0);
-  populate(colB, IMAGES.slice(half), half);
+const CARD_SIZE_CLASSES = ['card-sm', 'card-md', 'card-lg', 'card-md', 'card-lg', 'card-sm'];
+const WAVE_ROW_CONFIG = [
+  { speed: 0.5, phaseOffset: 0, arcScale: 1 },
+  { speed: 0.55, phaseOffset: 2.1, arcScale: 0.85 },
+  { speed: 0.48, phaseOffset: 4.2, arcScale: 0.7 },
+];
+const IMAGES_PER_ROW = 7;
+const WAVE_IMAGE_BUFFER = 220;
+const TRANSPARENT_PIXEL = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+const PAUSE_HOLD_MS = 700;
+const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+let waveRows = [];
+let wavePhase = 0;
+let wavePaused = false;
+let pauseHoldTimer = null;
+let waveRafId = 0;
+let waveInView = true;
+let galleryW = 1;
+const efficiencyToggle = document.getElementById('efficiencyToggle');
+const EFFICIENCY_STORAGE_KEY = 'portfolio-efficiency-mode';
+let efficiencyMode = false;
+let stopBubbleSpawner = null;
+let stopCursorEffects = null;
+let stickersBuilt = false;
+let footerAsciiBuilt = false;
+
+function shouldReduceEffects() {
+  return REDUCED_MOTION || efficiencyMode;
 }
 
-function populate(col, subset, offset) {
-  if (!subset.length) return;
-  [...subset, ...subset].forEach((src, i) => {
-    col.appendChild(makeCard(src, offset + (i % subset.length)));
-  });
+function loadEfficiencyPreference() {
+  try {
+    return localStorage.getItem(EFFICIENCY_STORAGE_KEY) === '1';
+  } catch {
+    return false;
+  }
 }
 
-function makeCard(src, idx) {
+function saveEfficiencyPreference(enabled) {
+  try {
+    localStorage.setItem(EFFICIENCY_STORAGE_KEY, enabled ? '1' : '0');
+  } catch {
+    // Ignore storage write failures (private mode, quotas, etc.).
+  }
+}
+
+function shuffleArray(arr) {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
+function makeCard(src, idx, sizeClass) {
   const card = document.createElement('div');
-  card.className = 'gallery-card';
+  card.className = `gallery-card wave-card ${sizeClass || 'card-md'}`;
+  card.dataset.lbIndex = String(idx);
 
   const img = document.createElement('img');
-  img.src = src;
+  const thumb = thumbPath(src);
+  if (shouldReduceEffects()) {
+    img.src = thumb;
+  } else {
+    img.dataset.src = thumb;
+    img.src = TRANSPARENT_PIXEL;
+  }
   img.alt = src.split('/').pop().replace(/\.[^.]+$/, '');
-  img.loading = 'lazy';
+  img.decoding = 'async';
+  img.draggable = false;
+  if (sizeClass === 'card-sm') {
+    img.width = 140;
+    img.height = 100;
+  } else if (sizeClass === 'card-lg') {
+    img.width = 220;
+    img.height = 160;
+  } else {
+    img.width = 180;
+    img.height = 130;
+  }
   card.appendChild(img);
 
   const hint = document.createElement('div');
   hint.className = 'expand-hint';
-  hint.innerHTML = `
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 3 21 3 21 9"/>
-      <polyline points="9 21 3 21 3 15"/>
-      <line x1="21" y1="3" x2="14" y2="10"/>
-      <line x1="3" y1="21" x2="10" y2="14"/>
-    </svg>
-    View
-  `;
+  hint.textContent = 'View';
   card.appendChild(hint);
 
   card.addEventListener('click', () => openLightbox(idx));
   return card;
 }
 
-if (colA && colB) buildGallery();
+function syncCardImage(card, centerX, galleryWidth) {
+  const img = card.querySelector('img');
+  if (!img) return;
 
-/* ── Projects panel ─────────────────────────────────────── */
-const projectsList = document.getElementById('projectsList');
-const tabGallery = document.getElementById('tabGallery');
-const tabProjects = document.getElementById('tabProjects');
-const panelGallery = document.getElementById('panelGallery');
-const panelProjects = document.getElementById('panelProjects');
+  const cardW = card.offsetWidth || 180;
+  const cardLeft = centerX - cardW / 2;
+  const cardRight = centerX + cardW / 2;
+  const loadMin = -WAVE_IMAGE_BUFFER;
+  const loadMax = galleryWidth + WAVE_IMAGE_BUFFER * 2;
+  const inLoadRange = cardRight >= loadMin && cardLeft <= loadMax;
 
-function buildProjects() {
-  if (!projectsList) return;
+  // This is a small performance trick:
+  // load images only when they are near the visible zone,
+  // unload after they leave far enough to the left.
+  if (inLoadRange) {
+    const needed = img.dataset.src;
+    if (needed && img.dataset.loaded !== needed) {
+      img.src = needed;
+      img.dataset.loaded = needed;
+    }
+  } else if (img.dataset.loaded) {
+    img.src = TRANSPARENT_PIXEL;
+    delete img.dataset.loaded;
+  }
+}
+
+function unloadWaveImages() {
+  waveRows.forEach(row => {
+    row.cards.forEach(card => {
+      const img = card.querySelector('img');
+      if (!img || !img.dataset.loaded) return;
+      img.src = TRANSPARENT_PIXEL;
+      delete img.dataset.loaded;
+    });
+  });
+}
+
+function measureRowCenters(track) {
+  const cards = track.children;
+  const centers = new Float32Array(cards.length);
+  for (let i = 0; i < cards.length; i++) {
+    centers[i] = cards[i].offsetLeft + cards[i].offsetWidth / 2;
+  }
+  const halfCount = Math.floor(cards.length / 2);
+  const halfWidth = halfCount > 0
+    ? centers[halfCount] - centers[0]
+    : track.scrollWidth / 2;
+  return { centers, cards: [...cards], halfWidth };
+}
+
+function recalcWaveMetrics() {
+  if (!waveGallery) return;
+  galleryW = waveGallery.clientWidth || 1;
+  waveRows.forEach((row, rowIdx) => {
+    let measured = measureRowCenters(row.track);
+
+    // When the window gets wider, I keep adding copies until half-track
+    // is safely wider than the visible area + buffer.
+    // I do it with measurement (not pure guess math) so CSS size changes
+    // don't quietly break the seamless loop.
+    if (row.entries?.length && !shouldReduceEffects()) {
+      let guard = 0;
+      while (
+        measured.halfWidth > 0 &&
+        measured.halfWidth < galleryW + WAVE_IMAGE_BUFFER * 2 &&
+        guard < 8
+      ) {
+        appendEntryCopies(row, 2);
+        measured = measureRowCenters(row.track);
+        guard++;
+      }
+    }
+
+    row.centers = measured.centers;
+    row.cards = measured.cards;
+    const prevHalf = row.halfWidth;
+    row.halfWidth = measured.halfWidth;
+    if (!prevHalf && row.halfWidth > 0) {
+      row.scrollX = rowIdx * 48;
+    }
+  });
+}
+
+function stopWaveLoop() {
+  if (waveRafId) {
+    cancelAnimationFrame(waveRafId);
+    waveRafId = 0;
+  }
+}
+
+function syncWaveLoop() {
+  stopWaveLoop();
+  if (shouldReduceEffects() || !waveRows.length || !waveInView || document.hidden || wavePaused) return;
+  waveRafId = requestAnimationFrame(animateWaveGallery);
+}
+
+function setWavePaused(paused) {
+  wavePaused = paused;
+  if (!wavePauseChip) return;
+  wavePauseChip.classList.toggle('is-paused', paused);
+  wavePauseChip.setAttribute('aria-pressed', paused ? 'true' : 'false');
+  wavePauseChip.textContent = paused ? 'Paused' : 'Hold to pause';
+  syncWaveLoop();
+}
+
+function clearPauseHoldTimer() {
+  if (pauseHoldTimer) {
+    clearTimeout(pauseHoldTimer);
+    pauseHoldTimer = null;
+  }
+}
+
+function setupPauseChip() {
+  if (!wavePauseChip) return;
+
+  const schedulePause = () => {
+    clearPauseHoldTimer();
+    pauseHoldTimer = setTimeout(() => setWavePaused(true), PAUSE_HOLD_MS);
+  };
+
+  const resume = () => {
+    clearPauseHoldTimer();
+    setWavePaused(false);
+  };
+
+  wavePauseChip.addEventListener('mouseenter', schedulePause);
+  wavePauseChip.addEventListener('mouseleave', resume);
+  wavePauseChip.addEventListener('focus', schedulePause);
+  wavePauseChip.addEventListener('blur', resume);
+  wavePauseChip.addEventListener('keydown', e => {
+    if (e.key !== ' ') return;
+    e.preventDefault();
+    if (wavePaused) resume();
+    else setWavePaused(true);
+  });
+}
+
+const CARD_CLASS_WIDTHS = { 'card-sm': 140, 'card-md': 180, 'card-lg': 220 };
+const WAVE_CARD_GAP = 20;
+
+function makeRowEntries(subset) {
+  return subset.map((src, j) => {
+    const globalIdx = IMAGES.indexOf(src);
+    return {
+      src,
+      globalIdx: globalIdx >= 0 ? globalIdx : j % IMAGES.length,
+      sizeClass: CARD_SIZE_CLASSES[j % CARD_SIZE_CLASSES.length],
+    };
+  });
+}
+
+function entriesCopyWidth(entries) {
+  return entries.reduce(
+    (sum, entry) => sum + (CARD_CLASS_WIDTHS[entry.sizeClass] || 180) + WAVE_CARD_GAP,
+    0
+  );
+}
+
+function appendEntryCopies(row, copies) {
+  for (let c = 0; c < copies; c++) {
+    row.entries.forEach(entry => {
+      row.track.appendChild(makeCard(entry.src, entry.globalIdx, entry.sizeClass));
+    });
+  }
+}
+
+function waveCopiesNeeded(entries) {
+  const viewportW = waveGallery.clientWidth || window.innerWidth || 1200;
+  const copyWidth = Math.max(entriesCopyWidth(entries), 1);
+  const halfCopies = Math.max(1, Math.ceil((viewportW + WAVE_IMAGE_BUFFER * 2) / copyWidth));
+  return halfCopies * 2;
+}
+
+function trimWaveRowsForEfficiency() {
+  waveRows.forEach(row => {
+    if (!row.entries?.length) return;
+    const center = Math.floor(row.entries.length / 2);
+    const selectedEntries = [
+      row.entries[Math.max(0, center - 1)],
+      row.entries[center],
+      row.entries[Math.min(row.entries.length - 1, center + 1)],
+    ].filter(Boolean);
+
+    row.track.innerHTML = '';
+    selectedEntries.forEach(entry => {
+      row.track.appendChild(makeCard(entry.src, entry.globalIdx, 'card-md'));
+    });
+    row.scrollX = 0;
+  });
+}
+
+function restoreWaveRowsFromEfficiency() {
+  waveRows.forEach(row => {
+    if (!row.entries?.length) return;
+    row.track.innerHTML = '';
+    appendEntryCopies(row, waveCopiesNeeded(row.entries));
+    row.scrollX = 0;
+  });
+}
+
+function loadWaveImagesNow() {
+  waveRows.forEach(row => {
+    row.cards.forEach(card => {
+      const img = card.querySelector('img');
+      if (!img) return;
+      const needed = img.dataset.src || img.src;
+      if (!needed) return;
+      img.src = needed;
+      img.dataset.loaded = needed;
+      card.style.transform = 'translate3d(0,0,0)';
+    });
+    row.track.style.transform = 'none';
+  });
+}
+
+function buildWaveGallery() {
+  if (!waveGallery || !IMAGES.length) return;
+
+  const shuffled = shuffleArray(IMAGES);
+
+  WAVE_ROW_CONFIG.forEach((config, rowIdx) => {
+    const stream = document.createElement('div');
+    stream.className = 'wave-stream';
+
+    const track = document.createElement('div');
+    track.className = 'wave-track';
+
+    const start = rowIdx * IMAGES_PER_ROW;
+    const subset = shuffled.slice(start, start + IMAGES_PER_ROW);
+    if (!subset.length) return;
+
+    const entries = makeRowEntries(subset);
+
+    stream.appendChild(track);
+    waveGallery.appendChild(stream);
+
+    const row = {
+      track,
+      entries,
+      cards: [],
+      centers: new Float32Array(0),
+      scrollX: 0,
+      halfWidth: 0,
+      speed: config.speed,
+      phaseOffset: config.phaseOffset,
+      arcScale: config.arcScale,
+    };
+
+    appendEntryCopies(row, shouldReduceEffects() ? 1 : waveCopiesNeeded(entries));
+    waveRows.push(row);
+  });
+
+  setupPauseChip();
+
+  requestAnimationFrame(() => {
+    recalcWaveMetrics();
+    paintWaveGallery(false);
+    syncWaveLoop();
+  });
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      recalcWaveMetrics();
+      paintWaveGallery(false);
+      syncWaveLoop();
+    }, 150);
+  }, { passive: true });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) unloadWaveImages();
+    syncWaveLoop();
+  });
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      entries => {
+        waveInView = entries[0]?.isIntersecting ?? false;
+        syncWaveLoop();
+      },
+      { rootMargin: '80px 0px' }
+    );
+    observer.observe(waveGallery);
+  }
+}
+
+function paintWaveGallery(advance) {
+  if (!waveGallery || !waveRows.length) return;
+  if (advance) wavePhase += 0.018;
+  const invGalleryW = 1 / galleryW;
+
+  for (let r = 0; r < waveRows.length; r++) {
+    const row = waveRows[r];
+    if (advance && row.halfWidth > 0) {
+      row.scrollX += row.speed;
+      if (row.scrollX >= row.halfWidth) row.scrollX %= row.halfWidth;
+    }
+
+    row.track.style.transform = `translate3d(${-row.scrollX}px,0,0)`;
+
+    const { centers, cards, phaseOffset, arcScale } = row;
+    for (let i = 0; i < centers.length; i++) {
+      const centerX = centers[i] - row.scrollX;
+      syncCardImage(cards[i], centerX, galleryW);
+
+      // Arc note to future me:
+      // t is 0..1 from left -> right.
+      // This quadratic keeps the right side a little higher,
+      // dips near center, then exits lower on the left.
+      const t = centerX * invGalleryW;
+      const arcY = (24 * t * t - 108 * t + 40) * arcScale * 0.9;
+      const phase = centerX * 0.014 + wavePhase + phaseOffset + i * 0.12;
+      const waveY = Math.sin(phase) * 10;
+      const depth = Math.cos(phase) * 16;
+      const rotY = Math.sin(centerX * 0.01 + wavePhase + phaseOffset) * 4;
+      const scale = 1 + Math.max(0, depth / 180);
+
+      cards[i].style.transform =
+        `translate3d(0,${arcY + waveY}px,${depth}px) rotateY(${rotY}deg) scale(${scale})`;
+    }
+  }
+}
+
+function animateWaveGallery() {
+  waveRafId = 0;
+  if (!waveGallery || !waveRows.length || !waveInView || document.hidden || wavePaused) return;
+
+  paintWaveGallery(true);
+  waveRafId = requestAnimationFrame(animateWaveGallery);
+}
+
+buildWaveGallery();
+
+/* ── Dock navbar scroll-linked lift ─────────────────────── */
+// The dock is intentionally split:
+// - Mobile: keep it pinned at the bottom for clean usability.
+// - Desktop: let it travel up as you scroll the hero.
+const dockNav = document.getElementById('dockNav');
+const landingSection = document.getElementById('landing');
+
+function updateDockPosition() {
+  if (!dockNav || !landingSection) return;
+
+  const isMobileDock = window.matchMedia('(max-width: 900px)').matches;
+  if (isMobileDock) {
+    // Mobile stays pinned at the bottom; no scroll-linked lift.
+    dockNav.style.setProperty('--dock-lift', '0px');
+    return;
+  }
+
+  const bottomOffset = Math.max(24, dockNav.offsetHeight + 12);
+  // Slightly tighter top spacing on desktop so the dock sits closer to the top.
+  const topTarget = 10;
+  const landingHeight = landingSection.offsetHeight;
+  const scrollRange = Math.max(landingHeight - window.innerHeight * 0.5, 1);
+  const progress = clamp(window.scrollY / scrollRange, 0, 1);
+  const navHeight = dockNav.offsetHeight;
+  const maxLift = window.innerHeight - navHeight - bottomOffset - topTarget;
+  const lift = progress * Math.max(maxLift, 0);
+
+  dockNav.style.setProperty('--dock-lift', `${-lift}px`);
+}
+
+if (dockNav && landingSection) {
+  let dockTicking = false;
+
+  const scheduleDockUpdate = () => {
+    if (dockTicking) return;
+    dockTicking = true;
+    requestAnimationFrame(() => {
+      updateDockPosition();
+      dockTicking = false;
+    });
+  };
+
+  window.addEventListener('scroll', scheduleDockUpdate, { passive: true });
+  window.addEventListener('resize', scheduleDockUpdate);
+  updateDockPosition();
+}
+
+/* ── Silly stickers ─────────────────────────────────────── */
+// These are the "chaos but controlled" elements.
+// I keep them playful, but cap overlap so they don't turn into visual noise.
+
+const STICKER_GRID_COLS = 4;
+const STICKER_GRID_ROWS = 4;
+const STICKER_MAX_PER_CELL = 2;
+
+function pickStickerPlacement(cellCounts) {
+  const totalCells = STICKER_GRID_COLS * STICKER_GRID_ROWS;
+  const order = shuffleArray([...Array(totalCells).keys()]);
+
+  for (const cellIdx of order) {
+    if ((cellCounts.get(cellIdx) || 0) < STICKER_MAX_PER_CELL) {
+      return cellIdx;
+    }
+  }
+
+  for (let cellIdx = 0; cellIdx < totalCells; cellIdx++) {
+    if ((cellCounts.get(cellIdx) || 0) < STICKER_MAX_PER_CELL) return cellIdx;
+  }
+
+  // Fallback: if every cell is full, still place somewhere deterministic.
+  return order[0] ?? 0;
+}
+
+function cellToPosition(cellIdx, slotInCell) {
+  const col = cellIdx % STICKER_GRID_COLS;
+  const row = Math.floor(cellIdx / STICKER_GRID_COLS);
+  const cellW = 100 / STICKER_GRID_COLS;
+  const cellH = 100 / STICKER_GRID_ROWS;
+  const inset = 4;
+  const jitterX = 6 + Math.random() * (cellW - 18);
+  const baseY = slotInCell === 0 ? 10 : 52;
+  const jitterY = baseY + Math.random() * (cellH * 0.35);
+
+  return {
+    left: `${inset + col * cellW + jitterX}%`,
+    top: `${inset + row * cellH + jitterY}%`,
+  };
+}
+
+function buildSillyStickers() {
+  if (shouldReduceEffects() || stickersBuilt) return;
+  const layout = [
+    { section: 'landing', count: 4 },
+    { section: 'about', count: 5 },
+    { section: 'projects', count: 4 },
+  ];
+  const pool = shuffleArray(SILLY_IMAGE_FILES);
+  let poolIdx = 0;
+
+  // I rebuild stickers per section so each section can have its own vibe
+  // without everything bunching in one area.
+  layout.forEach(({ section, count }) => {
+    const host = document.querySelector(`[data-sticker-section="${section}"]`);
+    if (!host) return;
+
+    const cellCounts = new Map();
+
+    for (let i = 0; i < count; i++) {
+      const src = pool[poolIdx % pool.length];
+      poolIdx += 1;
+
+      const cellIdx = pickStickerPlacement(cellCounts);
+      const slotInCell = cellCounts.get(cellIdx) || 0;
+      cellCounts.set(cellIdx, slotInCell + 1);
+      const pos = cellToPosition(cellIdx, slotInCell);
+
+      const el = document.createElement('img');
+      el.className = 'aero-sticker';
+      el.src = src;
+      el.alt = '';
+      el.loading = 'lazy';
+      el.decoding = 'async';
+      el.draggable = false;
+
+      const width = 58 + Math.floor(Math.random() * 40);
+      el.style.width = `${width}px`;
+      el.style.left = pos.left;
+      el.style.top = pos.top;
+      el.style.right = '';
+      el.style.bottom = '';
+      el.style.setProperty('--sticker-rotate', `${-14 + Math.random() * 28}deg`);
+      el.style.setProperty('--sticker-delay', `${-Math.random() * 14}s`);
+      el.style.setProperty('--sticker-drift-delay', `${-Math.random() * 18}s`);
+
+      host.appendChild(el);
+    }
+  });
+  stickersBuilt = true;
+}
+
+/* ── Aero bubble spawner ──────────────────────────────────── */
+// Tiny game loop energy:
+// bubbles float, you pop them, and new ones respawn after a short delay.
+
+const BUBBLE_MAX_COUNT = 6;
+const BUBBLE_SPAWN_MS = 14000;
+const BUBBLE_RESPAWN_MIN_MS = 3000;
+const BUBBLE_RESPAWN_MAX_MS = 5000;
+
+function initAeroBubbleSpawner() {
+  if (shouldReduceEffects() || stopBubbleSpawner) return;
+
+  const layer = document.getElementById('aeroBubbleLayer');
+  if (!layer) return;
+
+  let bubbles = [...layer.querySelectorAll('.aero-bubble')];
+
+  function rand(min, max) {
+    return min + Math.random() * (max - min);
+  }
+
+  function applyBubbleMotion(bubble) {
+    const size = rand(32, 88);
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.style.top = `${rand(4, 86)}%`;
+    bubble.style.right = '';
+    bubble.style.bottom = '';
+    bubble.style.left = `${rand(2, 90)}%`;
+    bubble.style.animationDuration = `${rand(11, 20)}s`;
+    bubble.style.animationDelay = `${-rand(0, 16)}s`;
+    bubble.style.setProperty('--bubble-drift', `${rand(-20, 20)}px`);
+    bubble.style.opacity = '';
+    bubble.classList.remove('aero-bubble--pop');
+  }
+
+  function createBubble(isDynamic) {
+    const bubble = isDynamic
+      ? document.createElement('div')
+      : null;
+    if (bubble) {
+      bubble.className = 'aero-bubble aero-bubble--dynamic';
+      bubble.setAttribute('aria-hidden', 'true');
+      layer.appendChild(bubble);
+    }
+    return bubble;
+  }
+
+  function registerBubble(bubble, fadeIn) {
+    applyBubbleMotion(bubble);
+    if (fadeIn) {
+      bubble.style.opacity = '0';
+      requestAnimationFrame(() => {
+        bubble.style.opacity = '0.85';
+      });
+    }
+    bubbles.push(bubble);
+  }
+
+  bubbles.forEach(b => applyBubbleMotion(b));
+
+  function spawnBubble() {
+    if (document.hidden) return;
+    if (bubbles.length >= BUBBLE_MAX_COUNT) return;
+
+    const bubble = createBubble(true);
+    if (!bubble) return;
+    registerBubble(bubble, true);
+  }
+
+  function scheduleRespawn() {
+    const delay = rand(BUBBLE_RESPAWN_MIN_MS, BUBBLE_RESPAWN_MAX_MS);
+    setTimeout(() => {
+      if (!document.hidden) spawnBubble();
+    }, delay);
+  }
+
+  function popBubble(bubble) {
+    if (!bubble || bubble.classList.contains('aero-bubble--pop')) return;
+
+    bubble.classList.add('aero-bubble--pop');
+    bubbles = bubbles.filter(b => b !== bubble);
+
+    setTimeout(() => {
+      bubble.remove();
+      scheduleRespawn();
+    }, 320);
+  }
+
+  // Capture-phase pointer handling fixes "some bubbles pop, some don't".
+  // If direct target misses, I do a fallback bounds hit-test.
+  const bubblePointerHandler = e => {
+    const layerRect = layer.getBoundingClientRect();
+    if (
+      e.clientX < layerRect.left ||
+      e.clientX > layerRect.right ||
+      e.clientY < layerRect.top ||
+      e.clientY > layerRect.bottom
+    ) {
+      return;
+    }
+
+    let bubble = e.target.closest?.('.aero-bubble') || null;
+    if (!bubble) {
+      bubble = bubbles.find(b => {
+        const rect = b.getBoundingClientRect();
+        return (
+          rect.width > 0 &&
+          rect.height > 0 &&
+          e.clientX >= rect.left &&
+          e.clientX <= rect.right &&
+          e.clientY >= rect.top &&
+          e.clientY <= rect.bottom
+        );
+      }) || null;
+    }
+
+    if (!bubble || bubble.classList.contains('aero-bubble--pop')) return;
+    e.preventDefault();
+    popBubble(bubble);
+  };
+
+  document.addEventListener('pointerdown', bubblePointerHandler, true);
+
+  const spawnTimer = setInterval(() => {
+    if (document.hidden) return;
+    spawnBubble();
+  }, BUBBLE_SPAWN_MS);
+
+  const visibilityHandler = () => {
+    if (!document.hidden) spawnBubble();
+  };
+  document.addEventListener('visibilitychange', visibilityHandler);
+
+  const cleanup = () => {
+    clearInterval(spawnTimer);
+    document.removeEventListener('pointerdown', bubblePointerHandler, true);
+    document.removeEventListener('visibilitychange', visibilityHandler);
+    stopBubbleSpawner = null;
+  };
+
+  stopBubbleSpawner = cleanup;
+  window.addEventListener('pagehide', cleanup, { once: true });
+}
+
+/* ── Cursor effects ───────────────────────────────────────── */
+
+function initCursorEffects() {
+  if (shouldReduceEffects() || stopCursorEffects || window.matchMedia('(pointer: coarse)').matches) return;
+
+  const layer = document.createElement('div');
+  layer.id = 'cursorFx';
+  layer.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(layer);
+
+  let lastTrail = 0;
+  const TRAIL_MS = 33;
+  const MAX_TRAIL = 12;
+
+  function trimTrail() {
+    while (layer.querySelectorAll('.cursor-particle').length > MAX_TRAIL) {
+      layer.querySelector('.cursor-particle')?.remove();
+    }
+  }
+
+  const mouseMoveHandler = e => {
+    const now = performance.now();
+    if (now - lastTrail < TRAIL_MS) return;
+    lastTrail = now;
+
+    const particle = document.createElement('span');
+    particle.className = 'cursor-particle';
+    particle.style.left = `${e.clientX}px`;
+    particle.style.top = `${e.clientY}px`;
+    layer.appendChild(particle);
+    requestAnimationFrame(() => particle.classList.add('is-active'));
+    setTimeout(() => particle.remove(), 420);
+    trimTrail();
+  };
+  document.addEventListener('mousemove', mouseMoveHandler, { passive: true });
+
+  const mouseDownHandler = e => {
+    if (e.button !== 0) return;
+
+    const ring = document.createElement('span');
+    ring.className = 'cursor-ring';
+    ring.style.left = `${e.clientX}px`;
+    ring.style.top = `${e.clientY}px`;
+    layer.appendChild(ring);
+    requestAnimationFrame(() => ring.classList.add('is-active'));
+    setTimeout(() => ring.remove(), 480);
+
+    for (let i = 0; i < 5; i++) {
+      const burst = document.createElement('span');
+      burst.className = 'cursor-burst';
+      const angle = (Math.PI * 2 * i) / 5 + Math.random() * 0.4;
+      burst.style.left = `${e.clientX}px`;
+      burst.style.top = `${e.clientY}px`;
+      burst.style.setProperty('--bx', `${Math.cos(angle) * (18 + Math.random() * 14)}px`);
+      burst.style.setProperty('--by', `${Math.sin(angle) * (18 + Math.random() * 14)}px`);
+      layer.appendChild(burst);
+      requestAnimationFrame(() => burst.classList.add('is-active'));
+      setTimeout(() => burst.remove(), 520);
+    }
+  };
+  document.addEventListener('mousedown', mouseDownHandler);
+
+  stopCursorEffects = () => {
+    document.removeEventListener('mousemove', mouseMoveHandler);
+    document.removeEventListener('mousedown', mouseDownHandler);
+    layer.remove();
+    stopCursorEffects = null;
+  };
+}
+
+/* ── File explorer projects ───────────────────────────────── */
+// This section is basically a mini fake-OS navigator for projects.
+// The data comes from PROJECTS, the UI is rendered from current explorerState.
+
+const FOLDER_ICON = `<svg class="fe-folder-icon" viewBox="0 0 76 52" aria-hidden="true"><path d="M4 12a4 4 0 0 1 4-4h16l6 6h38a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V12z" fill="#8edcff" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/></svg>`;
+
+let explorerState = { view: 'root', category: null };
+
+function getProjectsByCategory(categoryId) {
+  return PROJECTS.filter(p => p.category === categoryId);
+}
+
+function getCategoryName(categoryId) {
+  return PROJECT_CATEGORIES.find(c => c.id === categoryId)?.name || categoryId;
+}
+
+function buildProjectExplorer() {
+  const sidebar = document.getElementById('feSidebar');
+  const main = document.getElementById('feMain');
+  const backBtn = document.getElementById('feBack');
+  const breadcrumb = document.getElementById('feBreadcrumb');
+  if (!sidebar || !main) return;
+
+  function setExplorerState(next) {
+    explorerState = next;
+    renderExplorer();
+  }
+
+  function openFolderItem(el) {
+    const type = el.dataset.type;
+    if (type === 'category') {
+      setExplorerState({ view: 'category', category: el.dataset.category });
+      return;
+    }
+    if (type === 'project') {
+      const project = PROJECTS.find(p => p.slug === el.dataset.slug);
+      if (project) openProjectModal(project);
+    }
+  }
+
+  function makeFolderItem({ type, label, sublabel, category, slug, previewImage }) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'fe-item';
+    btn.dataset.type = type;
+    if (category) btn.dataset.category = category;
+    if (slug) btn.dataset.slug = slug;
+
+    const icon = type === 'project' && previewImage
+      ? `<img class="fe-item-thumb" src="${escapeHtml(previewImage)}" alt="" loading="lazy" decoding="async" />`
+      : FOLDER_ICON;
+
+    btn.innerHTML = `
+      ${icon}
+      <span class="fe-item-name">${escapeHtml(label)}</span>
+      ${sublabel ? `<span class="fe-item-meta">${escapeHtml(sublabel)}</span>` : ''}
+    `;
+    btn.addEventListener('click', () => openFolderItem(btn));
+    btn.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openFolderItem(btn);
+      }
+    });
+    return btn;
+  }
+
+  function renderSidebar() {
+    sidebar.innerHTML = '';
+    const heading = document.createElement('p');
+    heading.className = 'fe-sidebar-heading';
+    heading.textContent = 'Folders';
+    sidebar.appendChild(heading);
+
+    const allBtn = document.createElement('button');
+    allBtn.type = 'button';
+    allBtn.className = `fe-sidebar-item${explorerState.view === 'root' ? ' is-active' : ''}`;
+    allBtn.textContent = 'All Projects';
+    allBtn.addEventListener('click', () => setExplorerState({ view: 'root', category: null }));
+    sidebar.appendChild(allBtn);
+
+    PROJECT_CATEGORIES.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = `fe-sidebar-item${explorerState.category === cat.id ? ' is-active' : ''}`;
+      btn.textContent = cat.name;
+      btn.addEventListener('click', () => setExplorerState({ view: 'category', category: cat.id }));
+      sidebar.appendChild(btn);
+    });
+  }
+
+  function renderMain() {
+    main.innerHTML = '';
+    const grid = document.createElement('div');
+    grid.className = 'fe-grid';
+    grid.setAttribute('role', 'list');
+
+    if (explorerState.view === 'root') {
+      PROJECT_CATEGORIES.forEach(cat => {
+        const count = getProjectsByCategory(cat.id).length;
+        grid.appendChild(makeFolderItem({
+          type: 'category',
+          label: cat.name,
+          sublabel: `${count} item${count === 1 ? '' : 's'}`,
+          category: cat.id,
+        }));
+      });
+    } else {
+      getProjectsByCategory(explorerState.category).forEach(project => {
+        grid.appendChild(makeFolderItem({
+          type: 'project',
+          label: project.folderName || project.title,
+          sublabel: project.tags?.[0] || '',
+          slug: project.slug,
+          previewImage: project.previewImage,
+        }));
+      });
+    }
+
+    main.appendChild(grid);
+  }
+
+  function renderExplorer() {
+    renderSidebar();
+    renderMain();
+
+    if (backBtn) {
+      backBtn.disabled = explorerState.view === 'root';
+    }
+
+    if (breadcrumb) {
+      breadcrumb.textContent = explorerState.view === 'root'
+        ? 'Projects'
+        : `Projects › ${getCategoryName(explorerState.category)}`;
+    }
+  }
+
+  if (backBtn) {
+    backBtn.addEventListener('click', () => {
+      if (explorerState.view === 'category') {
+        setExplorerState({ view: 'root', category: null });
+      }
+    });
+  }
+
+  renderExplorer();
+}
+
+/* ── Footer clock + ASCII field ───────────────────────────── */
+
+const FOOTER_GLYPHS = [
+  { text: '><>', type: 'fish' },
+  { text: '><)))>', type: 'fish' },
+  { text: '><>', type: 'fish' },
+  { text: '°', type: 'bubble' },
+  { text: '○', type: 'bubble' },
+  { text: '·', type: 'bubble' },
+  { text: '(o)', type: 'bubble' },
+  { text: '◦', type: 'bubble' },
+  { text: '~', type: 'bubble' },
+  { text: '><>', type: 'fish' },
+  { text: '<><', type: 'fish' },
+  { text: '○', type: 'bubble' },
+  { text: '· ·', type: 'bubble' },
+  { text: '><>', type: 'fish' },
+  { text: '° ○', type: 'bubble' },
+  { text: '><)))>>', type: 'fish' },
+  { text: '·', type: 'bubble' },
+  { text: '( o )', type: 'bubble' },
+  { text: '><>', type: 'fish' },
+  { text: '○', type: 'bubble' },
+  { text: '°', type: 'bubble' },
+  { text: '<><', type: 'fish' },
+];
+
+function initFooterClock() {
+  const el = document.getElementById('footerClock');
+  if (!el) return;
+
+  const formatter = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/New_York',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  });
+
+  function tick() {
+    const now = new Date();
+    el.textContent = formatter.format(now);
+    el.dateTime = now.toISOString();
+  }
+
+  tick();
+  setInterval(tick, 1000);
+}
+
+function initFooterAscii() {
+  const host = document.getElementById('footerAscii');
+  if (!host || shouldReduceEffects() || footerAsciiBuilt) return;
+
+  const count = REDUCED_MOTION ? 8 : 14;
+  const glyphs = shuffleArray(FOOTER_GLYPHS).slice(0, count);
+
+  glyphs.forEach((glyph, i) => {
+    const el = document.createElement('span');
+    el.className = `footer-glyph footer-glyph--${glyph.type}`;
+    el.textContent = glyph.text;
+    el.style.left = `${4 + Math.random() * 88}%`;
+    el.style.top = `${8 + Math.random() * 72}%`;
+
+    if (!REDUCED_MOTION) {
+      el.style.setProperty('--glyph-duration', `${11 + Math.random() * 10}s`);
+      el.style.setProperty('--glyph-delay', `${-Math.random() * 14}s`);
+    } else {
+      el.style.animation = 'none';
+    }
+
+    host.appendChild(el);
+  });
+  footerAsciiBuilt = true;
+}
+
+function updateEfficiencyToggleUi() {
+  if (!efficiencyToggle) return;
+  efficiencyToggle.setAttribute('aria-pressed', efficiencyMode ? 'true' : 'false');
+  efficiencyToggle.title = efficiencyMode ? 'Efficiency mode on' : 'Efficiency mode off';
+}
+
+function applyEfficiencyMode() {
+  document.documentElement.classList.toggle('efficiency-mode', efficiencyMode);
+  updateEfficiencyToggleUi();
+
+  if (wavePauseChip) {
+    wavePauseChip.hidden = efficiencyMode;
+  }
+
+  if (efficiencyMode) {
+    setWavePaused(true);
+    trimWaveRowsForEfficiency();
+    recalcWaveMetrics();
+    paintWaveGallery(false);
+    loadWaveImagesNow();
+
+    if (stopBubbleSpawner) {
+      stopBubbleSpawner();
+    }
+    document.querySelectorAll('.aero-bubble--dynamic').forEach(el => el.remove());
+
+    if (stopCursorEffects) {
+      stopCursorEffects();
+    }
+
+    document.querySelectorAll('.aero-stickers').forEach(host => { host.innerHTML = ''; });
+    stickersBuilt = false;
+
+    const footerAscii = document.getElementById('footerAscii');
+    if (footerAscii) footerAscii.innerHTML = '';
+    footerAsciiBuilt = false;
+    return;
+  }
+
+  setWavePaused(false);
+  restoreWaveRowsFromEfficiency();
+  recalcWaveMetrics();
+  paintWaveGallery(false);
+  syncWaveLoop();
+
+  if (!stickersBuilt) buildSillyStickers();
+  if (!stopBubbleSpawner) initAeroBubbleSpawner();
+  if (!stopCursorEffects) initCursorEffects();
+  if (!footerAsciiBuilt) initFooterAscii();
+}
+
+if (efficiencyToggle) {
+  efficiencyToggle.addEventListener('click', () => {
+    efficiencyMode = !efficiencyMode;
+    saveEfficiencyPreference(efficiencyMode);
+    applyEfficiencyMode();
+  });
+}
+
+efficiencyMode = loadEfficiencyPreference();
+buildSillyStickers();
+buildProjectExplorer();
+initAeroBubbleSpawner();
+initCursorEffects();
+initFooterClock();
+initFooterAscii();
+applyEfficiencyMode();
+
+/* ── Projects (legacy card grid) ──────────────────────────── */
+
+function buildProjects(container) {
+  if (!container) return;
   PROJECTS.forEach(project => {
-    projectsList.appendChild(makeProjectCard(project));
+    container.appendChild(makeProjectCard(project));
   });
 }
 
@@ -350,24 +1698,9 @@ function makeProjectCard(project) {
   return card;
 }
 
-function switchPanel(name) {
-  const isGallery = name === 'gallery';
-  const rightPanel = document.querySelector('.right');
-
-  tabGallery.classList.toggle('active', isGallery);
-  tabProjects.classList.toggle('active', !isGallery);
-  tabGallery.setAttribute('aria-selected', isGallery);
-  tabProjects.setAttribute('aria-selected', !isGallery);
-
-  panelGallery.classList.toggle('active', isGallery);
-  panelProjects.classList.toggle('active', !isGallery);
-  panelGallery.hidden = !isGallery;
-  panelProjects.hidden = isGallery;
-
-  if (rightPanel) rightPanel.classList.toggle('right--projects', !isGallery);
-}
-
 /* ── Project detail modal ───────────────────────────────── */
+// Modal rendering is data-driven:
+// one project object in, full case-study panel out.
 const projectModal = document.getElementById('projectModal');
 const projectModalContent = document.getElementById('projectModalContent');
 const projectModalClose = document.getElementById('projectModalClose');
@@ -460,8 +1793,8 @@ function renderProjectDetail(project) {
       ${sectionsHtml}
       ${talkingHtml}
       <div class="case-cta">
-        <a class="btn btn-primary" href="${escapeHtml(project.demo)}" target="_blank" rel="noopener noreferrer">View live demo</a>
-        <a class="btn btn-outline" href="${escapeHtml(project.repo)}" target="_blank" rel="noopener noreferrer">Source code</a>
+        ${project.demo ? `<a class="btn btn-primary" href="${escapeHtml(project.demo)}" target="_blank" rel="noopener noreferrer">View live demo</a>` : ''}
+        ${project.repo ? `<a class="btn btn-outline" href="${escapeHtml(project.repo)}" target="_blank" rel="noopener noreferrer">Source code</a>` : ''}
       </div>
     </article>
   `;
@@ -486,13 +1819,6 @@ function closeProjectModal() {
   projectModalContent.innerHTML = '';
 }
 
-if (tabGallery && tabProjects) {
-  buildProjects();
-
-  tabGallery.addEventListener('click', () => switchPanel('gallery'));
-  tabProjects.addEventListener('click', () => switchPanel('projects'));
-}
-
 if (projectModal && projectModalClose && projectModalBackdrop) {
   projectModalClose.addEventListener('click', closeProjectModal);
   projectModalBackdrop.addEventListener('click', closeProjectModal);
@@ -513,6 +1839,10 @@ function openLightbox(idx) {
 function closeLightbox() {
   if (!lightbox) return;
   lightbox.classList.remove('open');
+  if (lbImg) {
+    lbImg.src = TRANSPARENT_PIXEL;
+    lbImg.removeAttribute('src');
+  }
 }
 
 function updateLb() {
