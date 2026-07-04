@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' https://www.youtube.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com;" />
 
   <!-- Primary Meta -->
   <title>Farhan Sadeque Kamal – Developer & Designer</title>
@@ -37,7 +38,7 @@
   <link rel="canonical" href="https://visuallyindie.dev/" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="gallery/image-00.png" />
+  <link rel="icon" type="image/png" href="gallery/thumbs/image-00.png" />
 
   <!-- Preconnect for Google Fonts performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -71,10 +72,18 @@
 
 <body>
   <a href="#landing" class="skip-link">Skip to main content</a>
-  <button class="efficiency-toggle" id="efficiencyToggle" type="button" aria-pressed="false" aria-label="Toggle efficiency mode">
-    <span class="efficiency-toggle-icon" aria-hidden="true">🍃</span>
-    <span class="efficiency-toggle-label">Eco Saver</span>
+  <button class="efficiency-toggle" id="efficiencyToggle" type="button" aria-pressed="false" aria-label="Eco Saver off — full motion" title="Eco Saver off — full motion">
+    <svg class="efficiency-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5C8.2 6.8 6.5 10.5 6.5 14.2c0 3.1 2.4 5.6 5.5 6.6 3.1-1 5.5-3.5 5.5-6.6 0-3.7-1.7-7.4-5.5-11.7zm-1.75 18.5h3.5v1.75h-3.5V21z"/></svg>
   </button>
+
+  <div class="birthday-toast" id="birthdayToast" role="status" aria-live="polite" hidden>
+    <div class="birthday-toast-header">
+      <span class="birthday-toast-icon" aria-hidden="true">&#127874;</span>
+      <span class="birthday-toast-title">Notification</span>
+      <button type="button" class="birthday-toast-close" aria-label="Dismiss birthday notification">&#10005;</button>
+    </div>
+    <p class="birthday-toast-body">Today is Farhan's birthday! Wish him a happy birthday on his profile.</p>
+  </div>
 
   <div class="aero-scene" aria-hidden="true">
     <div class="aero-sky"></div>
@@ -113,15 +122,16 @@
         </svg>
       </a>
       <a class="dock-social" href="https://x.com/_Farhan__Kamal_" target="_blank" rel="noopener noreferrer"
-        aria-label="X / Twitter profile">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-          stroke-linejoin="round" aria-hidden="true">
-          <path d="M4 4l16 16M4 20 20 4" />
+        aria-label="X profile">
+        <svg class="dock-social-icon dock-social-icon--fill" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
         </svg>
       </a>
     </div>
     <div class="dock-divider" aria-hidden="true"></div>
     <div class="dock-actions">
+      <a class="dock-action btn btn-outline" href="#about">About Me</a>
+      <a class="dock-action btn btn-outline" href="#experiences">Experience</a>
       <a class="dock-action btn btn-outline" href="#projects">Projects</a>
       <a class="dock-action btn btn-outline"
         href="https://drive.google.com/file/d/1yQFRMY473xWSpj4FyoO842akwR_4cNqJ/view" target="_blank"
@@ -130,6 +140,88 @@
         aria-label="Scroll to contact section">Contact Me</a>
     </div>
   </nav>
+
+  <aside class="wmp-player wmp-player--desktop" id="aeroMusicPlayer" aria-label="Frame Media Player">
+    <div class="wmp-window">
+      <div class="win-titlebar" id="wmpTitlebar">
+        <span class="win-titlebar-icon win-titlebar-icon--wmp" aria-hidden="true">
+          <svg class="win-titlebar-svg" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#e85d04"/><circle cx="8" cy="8" r="5.5" fill="#ff9f43"/><path fill="#fff" d="M6.5 5.2v5.6l5-2.8-5-2.8z"/></svg>
+        </span>
+        <span class="win-titlebar-text">Frame Media Player</span>
+        <div class="win-caption-btns" aria-hidden="true">
+          <button type="button" class="win-caption-btn win-caption-btn--min" tabindex="-1"></button>
+          <button type="button" class="win-caption-btn win-caption-btn--max" tabindex="-1"></button>
+          <button type="button" class="win-caption-btn win-caption-btn--close" tabindex="-1"></button>
+        </div>
+      </div>
+      <div class="wmp-tabs" role="tablist" aria-label="Media Player views">
+        <button type="button" class="wmp-tab wmp-tab--active" role="tab" data-wmp-view="now" aria-selected="true">Now Playing</button>
+        <button type="button" class="wmp-tab" role="tab" data-wmp-view="library" aria-selected="false">Library</button>
+      </div>
+      <div class="wmp-panels">
+        <div class="wmp-panel wmp-panel--now" id="wmpPanelNow" role="tabpanel">
+          <div class="wmp-body">
+            <div class="wmp-viz" id="wmpViz" aria-hidden="true">
+              <div class="wmp-viz-bg" id="wmpVizBg" aria-hidden="true"></div>
+              <div class="wmp-viz-scrim" aria-hidden="true"></div>
+              <div class="wmp-viz-disc-wrap" aria-hidden="true">
+                <img class="wmp-viz-disc" id="wmpVizDisc" src="assets/wmp/disc.png" alt="" width="88" height="88" decoding="async" />
+              </div>
+              <div class="wmp-viz-overlay">
+                <p class="wmp-viz-artist" id="musicTrackArtist">Frutiger Aero</p>
+                <p class="wmp-viz-title" id="musicTrackTitle">Frutiger Aero Mix</p>
+              </div>
+            </div>
+            <div class="wmp-playlist-rail">
+              <p class="wmp-playlist-heading">Now Playing</p>
+              <p class="wmp-playlist-track" id="musicPlaylistTrack">Frutiger Aero Mix</p>
+              <p class="wmp-playlist-heading wmp-playlist-heading--next">Up next</p>
+              <button type="button" class="wmp-playlist-next" id="musicNextUp">—</button>
+              <a class="wmp-more-link" href="https://frutigeraeroarchive.org/music" target="_blank" rel="noopener noreferrer">More Aero music</a>
+            </div>
+          </div>
+        </div>
+        <div class="wmp-panel wmp-panel--library" id="wmpPanelLibrary" role="tabpanel" hidden>
+          <p class="wmp-library-heading">All Music</p>
+          <ul class="wmp-library-list" id="wmpLibraryList" role="list"></ul>
+        </div>
+      </div>
+      <button type="button" class="wmp-progress-wrap" id="musicProgressWrap" aria-label="Seek">
+        <span class="wmp-progress-bar" id="musicProgressBar"></span>
+      </button>
+      <div class="wmp-transport">
+        <div class="wmp-transport-primary">
+          <button type="button" class="wmp-transport-btn" id="musicPrev" aria-label="Previous track">
+            <svg class="wmp-skip-icon wmp-skip-icon--prev" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 6v12l9-7-9-7zm10 0v12h2V6h-2z"/></svg>
+          </button>
+          <button type="button" class="wmp-transport-btn wmp-transport-btn--play" id="musicPlayPause" aria-label="Play" aria-pressed="false">
+            <svg class="wmp-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7L8 5z"/></svg>
+            <svg class="wmp-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 5h4v14H6V5zm8 0h4v14h-4V5z"/></svg>
+          </button>
+          <button type="button" class="wmp-transport-btn wmp-transport-btn--next" id="musicNext" aria-label="Next track">
+            <svg class="wmp-skip-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 6v12l9-7-9-7zm10 0v12h2V6h-2z"/></svg>
+          </button>
+        </div>
+        <div class="wmp-transport-center">
+          <span class="wmp-time" id="musicTimeDisplay">0:00 / 0:00</span>
+        </div>
+        <div class="wmp-transport-secondary">
+          <button type="button" class="wmp-transport-btn wmp-transport-btn--aux" id="musicShuffle" aria-label="Shuffle off" aria-pressed="false">
+            <svg class="wmp-icon-shuffle" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.6 9.6 0 0 0 7.556 8a9.6 9.6 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.6 10.6 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.6 9.6 0 0 0 6.444 8a9.6 9.6 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5"/><path fill="currentColor" d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192m0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192"/></svg>
+          </button>
+          <button type="button" class="wmp-transport-btn wmp-transport-btn--aux" id="musicRepeat" aria-label="Loop off" aria-pressed="false">
+            <svg class="wmp-icon-loop" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></svg>
+          </button>
+          <button type="button" class="wmp-transport-btn wmp-transport-btn--aux wmp-transport-btn--mute is-muted" id="musicMute" aria-label="Unmute" aria-pressed="true">
+            <svg class="wmp-icon-vol" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77 0-4.28-2.99-7.86-7-8.77z"/></svg>
+            <svg class="wmp-icon-muted" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4 9.91 6.09 12 8.18V4z"/></svg>
+          </button>
+          <input type="range" class="wmp-volume" id="musicVolume" min="0" max="100" value="100" aria-label="Volume" />
+        </div>
+      </div>
+    </div>
+    <div id="ytPlayerHost" class="wmp-yt-host" aria-hidden="true"></div>
+  </aside>
 
   <main role="main">
     <section class="landing" id="landing" aria-label="Introduction">
@@ -143,9 +235,7 @@
       </header>
 
       <div class="wave-gallery" id="waveGallery" aria-label="Work gallery"></div>
-      <button class="aero-pause-chip" id="wavePauseChip" type="button" aria-pressed="false">
-        Hold to pause
-      </button>
+      <div class="wmp-landing-slot" id="wmpLandingSlot"></div>
     </section>
 
     <section class="about" id="about" aria-label="About me">
@@ -159,16 +249,33 @@
         </div>
       </div>
       <div class="about-browser aero-glass">
-        <div class="about-browser-titlebar">
-          <div class="about-browser-traffic" aria-hidden="true">
-            <span></span><span></span><span></span>
+        <div class="win-titlebar about-ie-titlebar">
+          <span class="win-titlebar-icon win-titlebar-icon--globe" aria-hidden="true">
+            <svg class="win-titlebar-svg" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#1b6ec2"/><circle cx="8" cy="8" r="5.8" fill="none" stroke="#7ec8ff" stroke-width="0.55"/><ellipse cx="8" cy="8" rx="5.8" ry="2.2" fill="none" stroke="#fff" stroke-width="0.45" opacity="0.9"/><ellipse cx="8" cy="8" rx="2.2" ry="5.8" fill="none" stroke="#fff" stroke-width="0.45" opacity="0.75"/><line x1="2.2" y1="8" x2="13.8" y2="8" stroke="#fff" stroke-width="0.4" opacity="0.65"/></svg>
+          </span>
+          <span class="win-titlebar-text">Internet flow</span>
+          <div class="win-caption-btns" aria-hidden="true">
+            <button type="button" class="win-caption-btn win-caption-btn--min" tabindex="-1"></button>
+            <button type="button" class="win-caption-btn win-caption-btn--max" tabindex="-1"></button>
+            <button type="button" class="win-caption-btn win-caption-btn--close" tabindex="-1"></button>
           </div>
-          <span class="about-browser-title">profile.farhan.local</span>
         </div>
-        <div class="about-browser-toolbar">
-          <button type="button" class="about-browser-back" aria-label="Back" disabled>←</button>
-          <div class="about-browser-address" aria-hidden="true">https://myprofile/about</div>
+        <div class="about-ie-menubar" aria-hidden="true">
+          <span>File</span><span>Edit</span><span>View</span><span>Favorites</span><span>Tools</span><span>Help</span>
         </div>
+        <div class="about-ie-toolbar">
+          <button type="button" class="about-ie-tb-btn" disabled aria-label="Back">Back</button>
+          <button type="button" class="about-ie-tb-btn" disabled aria-label="Forward">Forward</button>
+          <button type="button" class="about-ie-tb-btn" disabled aria-label="Refresh">Refresh</button>
+          <button type="button" class="about-ie-tb-btn" disabled aria-label="Home">Home</button>
+          <span class="about-ie-tb-sep" aria-hidden="true"></span>
+          <label class="about-ie-address-wrap">
+            <span class="visually-hidden">Address</span>
+            <input type="text" class="about-ie-address" value="https://myprofile/about" readonly tabindex="-1" aria-hidden="true" />
+          </label>
+          <button type="button" class="about-ie-go" disabled>Go</button>
+        </div>
+        <p class="about-ie-infobar" aria-hidden="true">You are viewing a local profile page.</p>
         <div class="about-browser-body">
           <div class="profile-card" id="aboutProfile">
             <div class="profile-card-header">
@@ -203,7 +310,7 @@
                     </tr>
                     <tr>
                       <th scope="row">Age</th>
-                      <td>18</td>
+                      <td id="profileAge">18</td>
                     </tr>
                     <tr>
                       <th scope="row">Location</th>
@@ -244,15 +351,26 @@
       </div>
     </section>
 
+    <section class="experiences-section" id="experiences" aria-label="Experience">
+      <div class="aero-stickers" aria-hidden="true" data-sticker-section="experiences"></div>
+      <h2 class="section-title">Experience</h2>
+      <div class="experience-messenger" id="experienceMessenger" role="application" aria-label="Career messenger"></div>
+    </section>
+
     <section class="projects-section" id="projects" aria-label="Projects">
       <div class="aero-stickers" aria-hidden="true" data-sticker-section="projects"></div>
       <h2 class="section-title">Projects</h2>
       <div class="file-explorer aero-glass" id="projectExplorer">
-        <div class="fe-titlebar">
-          <div class="fe-traffic" aria-hidden="true">
-            <span></span><span></span><span></span>
+        <div class="win-titlebar fe-win-titlebar">
+          <span class="win-titlebar-icon win-titlebar-icon--folder" aria-hidden="true">
+            <svg class="win-titlebar-svg" viewBox="0 0 16 16" aria-hidden="true"><path fill="#f4c430" d="M1.5 4.5A1 1 0 0 1 2.5 3.5h4.2l1 1.2h6.8a1 1 0 0 1 1 1v7.3a1 1 0 0 1-1 1H2.5a1 1 0 0 1-1-1V4.5z"/><path fill="#e8b020" d="M1.5 5.8h13v6.2a1 1 0 0 1-1 1H2.5a1 1 0 0 1-1-1V5.8z"/></svg>
+          </span>
+          <span class="fe-title win-titlebar-text">Projects</span>
+          <div class="win-caption-btns" aria-hidden="true">
+            <button type="button" class="win-caption-btn win-caption-btn--min" tabindex="-1"></button>
+            <button type="button" class="win-caption-btn win-caption-btn--max" tabindex="-1"></button>
+            <button type="button" class="win-caption-btn win-caption-btn--close" tabindex="-1"></button>
           </div>
-          <span class="fe-title">Projects</span>
         </div>
         <div class="fe-toolbar">
           <button type="button" class="fe-btn fe-back" id="feBack" disabled aria-label="Go back">← Back</button>
@@ -302,10 +420,24 @@
   <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle"
     hidden>
     <div class="project-modal-backdrop" id="projectModalBackdrop"></div>
-    <div class="project-modal-panel">
-      <button class="project-modal-close" id="projectModalClose" type="button"
-        aria-label="Close project details">✕</button>
-      <div class="project-modal-scroll" id="projectModalContent"></div>
+    <div class="project-modal-panel file-explorer fe-modal-window">
+      <div class="win-titlebar fe-win-titlebar">
+        <span class="win-titlebar-icon win-titlebar-icon--app" id="projectModalIcon" aria-hidden="true">
+          <img class="win-titlebar-app-img" id="projectModalIconImg" src="" alt="" hidden />
+          <svg class="win-titlebar-svg win-titlebar-svg--folder-fallback" id="projectModalIconFallback" viewBox="0 0 16 16" aria-hidden="true"><path fill="#f4c430" d="M1.5 4.5A1 1 0 0 1 2.5 3.5h4.2l1 1.2h6.8a1 1 0 0 1 1 1v7.3a1 1 0 0 1-1 1H2.5a1 1 0 0 1-1-1V4.5z"/><path fill="#e8b020" d="M1.5 5.8h13v6.2a1 1 0 0 1-1 1H2.5a1 1 0 0 1-1-1V5.8z"/></svg>
+        </span>
+        <span class="fe-title win-titlebar-text" id="projectModalTitle">Projects</span>
+        <div class="win-caption-btns">
+          <button type="button" class="win-caption-btn win-caption-btn--min" tabindex="-1" aria-hidden="true"></button>
+          <button type="button" class="win-caption-btn win-caption-btn--max" tabindex="-1" aria-hidden="true"></button>
+          <button type="button" class="win-caption-btn win-caption-btn--close" id="projectModalClose" aria-label="Close project details"></button>
+        </div>
+      </div>
+      <div class="fe-toolbar">
+        <span class="fe-breadcrumb" id="projectModalBreadcrumb">Projects</span>
+        <div class="fe-address" aria-hidden="true">C:\Users\Farhan\Projects</div>
+      </div>
+      <div class="project-modal-scroll fe-main" id="projectModalContent"></div>
     </div>
   </div>
 
@@ -315,6 +447,7 @@
       <button class="lb-close" id="lbClose" aria-label="Close image viewer">✕</button>
       <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">‹</button>
       <img id="lbImg" src="" alt="Gallery image" loading="lazy" />
+      <p class="lb-caption" id="lbCaption" hidden></p>
       <button class="lb-nav lb-next" id="lbNext" aria-label="Next image">›</button>
       <div class="lb-counter" id="lbCounter" aria-live="polite"></div>
     </div>
